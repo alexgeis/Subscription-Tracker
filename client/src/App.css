@@ -1,6 +1,27 @@
 .App {
   text-align: center;
-}
+  /* background-color: #4279a1 ; */
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 300% 300%;
+    background-image: linear-gradient(
+          -45deg, 
+          #59C9A5 15%, 
+          #885A5A 25%, 
+          #427AA1 51%, 
+          #D7B377 100%
+    );  
+    animation: AnimateBG 20s ease infinite;
+  }
+  
+  @keyframes AnimateBG { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
 
 .App-logo {
   height: 40vmin;
