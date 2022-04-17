@@ -10,10 +10,9 @@ function Home() {
   return (
     <>
       <Container >
+        <img src={Money}class="img-fluid" id='money'/>
         <div id="logo">
-          {/* <img src={Money}class="img-fluid" id='money'/> */}
           <img src={Logo2}class="img-fluid" id='logo' alt="Logo"/>
-          {/* <img src={Money}class="img-fluid" id='money'/> */}
         </div>
         <Form>
           <div id="homeContainer">
@@ -28,21 +27,19 @@ function Home() {
             </Form.Group>
 
             <Button variant="primary" type="submit">
-             Login
+            Login
             </Button>
           <br></br>
           <br></br>
           <p> OR </p>
           <div>
             <Button variant="primary" type="submit">
-             Sign Up 
+            Sign Up 
             </Button>
           </div> </div>
         </Form>
         </Container>
-        
       </>
-    
   );
 }
 
