@@ -5,9 +5,8 @@ const resolvers = {
     users: async () => {
       return User.find({});
     },
-    subscriptions: async (parent, { _id }) => {
-      const params = _id ? { _id } : {};
-      return Subscription.find(params);
+    subscriptions: async () => {
+      return Subscription.find({});
     },
   },
 

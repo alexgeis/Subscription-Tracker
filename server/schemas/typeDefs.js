@@ -14,14 +14,15 @@ const typeDefs = gql`
     monthlyCost: Int,
     annualCost: Int,
     paymentType: String,
-    startDate: Date,
-    dueDate: Number,
+    startDate: String,
+    dueDate: Int,
     autoPay: Boolean,
     autoRenew: Boolean,
   }
 
   type Query {
-    user: User
+    users: [User]
+    subscription: [Subscription]
     # matchups(_id: String): [Matchup]
   }
 
