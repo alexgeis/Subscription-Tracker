@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { Form, Image, Button, Container } from "react-bootstrap";
+<<<<<<< HEAD
+import SettingsPage from "../Settings/Settings";
+import WelcomeScreen from "../Welcome/Welcome";
+=======
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
@@ -7,6 +11,7 @@ import Auth from "../utils/auth";
 
 // import Welcome from "./Welcome/Welcome";
 // import SignUp from "./SignUp/SignUp";
+>>>>>>> main
 
 function Home() {
   // const [loginInfo, setloginInfo] = useState("");
