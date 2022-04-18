@@ -6,33 +6,50 @@ const typeDefs = gql`
     username: String!
     password: String!
     email: String!
+    subscriptions: [String]
   }
 
   type Subscription {
     _id: ID!
     subscriptionName: String!
-    monthlyCost: Int,
-    annualCost: Int,
-    paymentType: String,
-    startDate: String,
-    dueDate: Int,
-    autoPay: Boolean,
-    autoRenew: Boolean,
+    monthlyCost: Int
+    annualCost: Int
+    paymentType: String
+    startDate: String
+    dueDate: Int
+    autoPay: Boolean
+    autoRenew: Boolean
   }
 
   type Query {
     users: [User]
-    subscription: [Subscription]
+    subscriptions: [Subscription]
     # matchups(_id: String): [Matchup]
   }
 
   type Mutation {
     createUser(username: String!, password: String!, email: String!): User
-    updateUser(_id: ID!, username: String!, password: String!, email: String!): User
-    # removeUser(_id: ID!): User
+    updateUser(
+      _id: ID!
+      username: String
+      password: String
+      email: String
+    ): User
+    removeUser(userId: ID!): User
 
     createSubscription(password: String!, email: String!): User
-    updateSubscription(_id: ID!, password: String!, email: String!): User
+    updateSubscription(
+      _id: ID!
+      subscriptionName: String
+      monthlyCost: Int
+      annualCost: Int
+      paymentType: String
+      startDate: String
+      dueDate: Int
+      autoPay: Boolean
+      autoRenew: Boolean
+    ): User
+    removeSubscription(userId: ID!, subscription: String!): User
   }
 `;
 

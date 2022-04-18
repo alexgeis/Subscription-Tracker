@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import '../Welcome/welcome.css'
 
 
@@ -22,3 +23,14 @@ function Welcome() {
 }
 
 export default Welcome;
+=======
+
+import '../Welcome/welcome.css'
+
+function Welcome() {
+  return <div>Welcome page</div>;
+}
+
+export default Welcome;
+
+>>>>>>> d9e2f5ddbbd01db15bbb9b1d6bc040dc11879b67
