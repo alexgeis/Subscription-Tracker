@@ -23,7 +23,7 @@ const resolvers = {
     updateUser: async (parent, { _id, techNum }) => {
       const vote = await Matchup.findOneAndUpdate(
         { _id },
-        { $inc: { [`tech${techNum}_votes`]: 1 } },
+        // { $inc: { [`tech${techNum}_votes`]: 1 } },
         { new: true }
       );
       return vote;
