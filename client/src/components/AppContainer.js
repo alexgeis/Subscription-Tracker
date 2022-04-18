@@ -11,8 +11,8 @@ import welcomeScreen from "./pages/Welcome/Welcome";
 // import Header from "./Container/pages/Header";
 // import Footer from "./Container/pages/Footer";
 
-export default function PortfolioContainer() {
-  const [currentPage, setCurrentPage] = useState("Home");
+export default function AppContainer() {
+  // const [currentPage, setCurrentPage] = useState("Home");
 
   const renderPage = () => {
     if (currentPage === "Home") {
@@ -39,14 +39,14 @@ export default function PortfolioContainer() {
     return <Tips />;
   };
 
-  const handlePageChange = (page) => setCurrentPage(page);
+  // const handlePageChange = (page) => setCurrentPage(page);
 
   return (
     <div>
       {/* // TODO: Add a comment describing what we are passing as props */}
       {/* <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} /> */}
       {/* // TODO: Add a comment explaining what is happening on the following line */}
-      {renderPage()}
+      {/* {renderPage()} */}
     </div>
   );
 }

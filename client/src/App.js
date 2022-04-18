@@ -7,9 +7,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <AppContainer />
-    </div>
+    <UserProvider>
+      <div className="App">
+        <AppContainer />
+      </div>
+    </UserProvider>
   );
 }
 

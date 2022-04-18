@@ -1,22 +1,53 @@
 import { useState } from "react";
 import { Form, Image, Button, Container } from "react-bootstrap";
+<<<<<<< HEAD
 import SettingsPage from "../Settings/Settings";
 import WelcomeScreen from "../Welcome/Welcome";
+=======
+import { Link } from "react-router-dom";
+import { useMutation } from "@apollo/client";
+import { LOGIN_USER } from "../utils/mutations";
+import Auth from "../utils/auth";
+
+// import Welcome from "./Welcome/Welcome";
+// import SignUp from "./SignUp/SignUp";
+>>>>>>> main
 
 function Home() {
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
+  // const [loginInfo, setloginInfo] = useState("");
+  const [formState, setFormState] = useState({ userName: "", password: "" });
+  const [login, { error, data }] = useMutation(LOGIN_USER);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    return name === "userName" ? setUserName(value) : setPassword(value);
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
   };
-  const handleSubmit = (event) => {
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setUserName("");
-    setPassword("");
+    console.log(formState);
+    try {
+      const { data } = await login({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.login.token); //json web token
+    } catch (event) {
+      console.error(event);
+    }
+
+    // clear form values
+    setFormState({
+      userName: "",
+      password: "",
+    });
   };
-  const handleSignup = (event) => {};
+
+  // const handleSignup = () => {}
 
   return (
     <>
@@ -28,7 +59,7 @@ function Home() {
               <Form.Label>User Name</Form.Label>
               <Form.Control
                 type="text"
-                value={userName}
+                value={formState.userName}
                 name="userName"
                 onChange={handleInputChange}
                 placeholder="Enter User Name"
@@ -39,7 +70,7 @@ function Home() {
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"
-                value={password}
+                value={formState.password}
                 name="password"
                 onChange={handleInputChange}
                 placeholder="Password"
@@ -52,7 +83,11 @@ function Home() {
           </div>
           <p>OR </p>
           <div>
-            <Button variant="primary" type="submit" onClick={handleSignup}>
+            <Button
+              variant="primary"
+              type="submit"
+              // onClick={handleSignup}
+            >
               Sign Up
             </Button>
           </div>
