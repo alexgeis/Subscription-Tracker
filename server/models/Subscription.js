@@ -9,9 +9,13 @@ const subscriptionModel = new Schema({
   monthlyCost: Number,
   annualCost: Number,
   paymentType: String,
-  startDate: Date,
+  startDate: {type: Date, default: Date.now},
   // We might want dueDate as a Integer, representing the Day-of-Month
-  dueDate: { type: Number, min: 1, max: 31 },
+  dueDate: { 
+    type: Number,
+    min: 1, 
+    max: 31
+   },
   autoPay: { type: Boolean, default: false },
   autoRenew: { type: Boolean, default: false },
 });

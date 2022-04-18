@@ -1,8 +1,8 @@
 [
     {
       "subscriptionName": "Netflix",
-      "monthlyCost": "$4",
-      "annualCost": "$48",
+      "monthlyCost": 4,
+      "annualCost": 48,
       "paymentType": "VISA",
       "startDate": "2020-10-26",
       "dueDate": "26",
@@ -11,8 +11,8 @@
     },
     {
       "subscriptionName": "Hulu",
-      "monthlyCost": "$5",
-      "annualCost": "$60",
+      "monthlyCost": 5,
+      "annualCost": 60,
       "paymentType": "MASTERCARD",
       "startDate": "2020-12-26",
       "dueDate": "26",
@@ -21,8 +21,8 @@
     },
     {
       "subscriptionName": "HBO",
-      "monthlyCost": "$6",
-      "annualCost": "$72",
+      "monthlyCost": 6,
+      "annualCost": 72,
       "paymentType": "VISA",
       "startDate": "2020-10-26",
       "dueDate": "26",
@@ -31,8 +31,8 @@
     },
     {
       "subscriptionName": "Splice",
-      "monthlyCost": "$3",
-      "annualCost": "$36",
+      "monthlyCost": 3,
+      "annualCost": 36,
       "paymentType": "VISA",
       "startDate": "2019-6-26",
       "dueDate": "26",
@@ -41,8 +41,8 @@
     },
     {
       "subscriptionName": "Patreon",
-      "monthlyCost": "$4",
-      "annualCost": "$48",
+      "monthlyCost": 4,
+      "annualCost": 48,
       "paymentType": "VISA",
       "startDate": "2020-7-13",
       "dueDate": "13",
@@ -51,8 +51,8 @@
     },
     {
       "subscriptionName": "Spotify",
-      "monthlyCost": "$6",
-      "annualCost": "$72",
+      "monthlyCost": 6,
+      "annualCost": 72,
       "paymentType": "VISA",
       "startDate": "2020-10-26",
       "dueDate": "26",
@@ -61,8 +61,8 @@
     },
     {
       "subscriptionName": "Freshly",
-      "monthlyCost": "$7",
-      "annualCost": "$84",
+      "monthlyCost": 7,
+      "annualCost": 84,
       "paymentType": "MASTERCARD",
       "startDate": "2019-08-10",
       "dueDate": "10",
@@ -71,8 +71,8 @@
     },
     {
       "subscriptionName": "Charity Donation",
-      "monthlyCost": "$5",
-      "annualCost": "$60",
+      "monthlyCost": 5,
+      "annualCost": 60,
       "paymentType": "MASTERCARD",
       "startDate": "2020-1-26",
       "dueDate": "26",
@@ -81,8 +81,8 @@
     },
     {
       "subscriptionName": "Squarespace",
-      "monthlyCost": "$9",
-      "annualCost": "$108",
+      "monthlyCost": 9,
+      "annualCost": 108,
       "paymentType": "VISA",
       "startDate": "2020-10-26",
       "dueDate": "26",

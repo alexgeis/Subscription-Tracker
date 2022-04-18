@@ -5,9 +5,8 @@ const resolvers = {
     users: async () => {
       return User.find({});
     },
-    subscriptions: async (parent, { _id }) => {
-      const params = _id ? { _id } : {};
-      return Subscription.find(params);
+    subscriptions: async () => {
+      return Subscription.find({});
     },
   },
 
@@ -17,11 +16,11 @@ const resolvers = {
       return user;
     },
     createSubscription: async (parent, args) => {
-      const user = await User.create(args);
+      const user = await Subscription.create(args);
       return user;
     },
     updateUser: async (parent, { _id, techNum }) => {
-      const vote = await Matchup.findOneAndUpdate(
+      const vote = await User.findOneAndUpdate(
         { _id },
         // { $inc: { [`tech${techNum}_votes`]: 1 } },
         { new: true }
@@ -29,7 +28,7 @@ const resolvers = {
       return vote;
     },
     updateSubscription: async (parent, { _id, techNum }) => {
-      const vote = await Matchup.findOneAndUpdate(
+      const vote = await Subscription.findOneAndUpdate(
         { _id },
         { $inc: { [`tech${techNum}_votes`]: 1 } },
         { new: true }
