@@ -1,0 +1,1 @@
+import '../MngSub/mngSub.css'
