@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 // import NavTabs from "./NavTabs"; - create this still
 import Home from "./Container/pages/Home";
-import MngSub from "./Container/pages/MngSub";
-import NewSub from "./Container/pages/NewSub";
-import Settings from "./Container/pages/Settings";
-import SignUp from "./Container/pages/SignUp";
-import SingleSub from "./Container/pages/SingleSub";
-import Tips from "./Container/pages/Tips";
-import Welcome from "./Container/pages/Welcome";
-import Header from "./Container/pages/Header";
-import Footer from "./Container/pages/Footer";
+// import MngSub from "./Container/pages/MngSub";
+// import NewSub from "./Container/pages/NewSub";
+// import Settings from "./Container/pages/Settings";
+// import SignUp from "./Container/pages/SignUp";
+// import SingleSub from "./Container/pages/SingleSub";
+// import Tips from "./Container/pages/Tips";
+// import Welcome from "./Container/pages/Welcome";
+// import Header from "./Container/pages/Header";
+// import Footer from "./Container/pages/Footer";
 
 export default function PortfolioContainer() {
   const [currentPage, setCurrentPage] = useState("Home");
