@@ -21,10 +21,19 @@ export const UserProvider = ({ children }) => {
     },
   ]);
 
+  // Creating our state
+  const [darkTheme, setDarkTheme] = useState(true);
+
+  // Method to update our state
+  const toggleTheme = () => {
+    console.log("inside toggle theme");
+    return setDarkTheme((prev) => !prev);
+  };
+
   // Function to add a user
   const addUser = (user) => {
     // Check if the user forgot to enter a name
-    if (!user.name) {
+    if (!user.username) {
       return;
     }
     const id = users.length + 1;
@@ -45,18 +54,19 @@ export const UserProvider = ({ children }) => {
   };
 
   // List of options for the user subscriptions
-  const subscriptions = [
-    "Mathematics",
-    "Computer Science",
-    "Art",
-    "English",
-    "Political Science",
-    "Journalism",
-    "Engineering",
-  ];
+  // const subscriptions = [
+  //   "Netflix",
+  //   "Hulu",
+  //   "Quibbi",
+  //   "Roku",
+  //   "Bearshare",
+  //   "WikiFeet",
+  // ];
 
   return (
-    <UserContext.Provider value={{ users, addUser, removeUser, subscriptions }}>
+    <UserContext.Provider
+      value={{ users, addUser, removeUser, darkTheme, toggleTheme }}
+    >
       {/* We render children in our component so that any descendent can access the value from the provider */}
       {children}
     </UserContext.Provider>
