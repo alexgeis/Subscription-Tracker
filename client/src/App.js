@@ -1,11 +1,11 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Home from "./components/Home/Home";
+import AppContainer from "./components/AppContainer";
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <AppContainer />
     </div>
   );
 }
