@@ -1,6 +1,6 @@
 const {Schema, model} = require('mongoose');
 
-const subscriptionSchema = new Schema({
+const subscriptionModel = new Schema({
     subscriptionName: {
         type: String, 
         required: true,
@@ -16,6 +16,6 @@ const subscriptionSchema = new Schema({
     autoRenew: {type: Boolean, default: false}
 })
 
-const Subscription = model('Subscription', subscriptionSchema)
+const Subscription = model('Subscription', subscriptionModel)
 
 module.export = Subscription
