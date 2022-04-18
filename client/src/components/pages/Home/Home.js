@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Form, Image, Button, Container } from "react-bootstrap";
+import SettingsPage from "../Settings/Settings";
+import WelcomeScreen from "../Welcome/Welcome";
 
 function Home() {
   const [userName, setUserName] = useState("");

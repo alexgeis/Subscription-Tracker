@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 // import NavTabs from "./NavTabs"; - create this still
-import Home from "./Container/pages/Home";
-import MngSub from "./Container/pages/MngSub";
-import NewSub from "./Container/pages/NewSub";
-import Settings from "./Container/pages/Settings";
-import SignUp from "./Container/pages/SignUp";
-import SingleSub from "./Container/pages/SingleSub";
-import Tips from "./Container/pages/Tips";
-import Welcome from "./Container/pages/Welcome";
-import Header from "./Container/pages/Header";
-import Footer from "./Container/pages/Footer";
+import Home from "./pages/Home/Home";
+import MngSub from "./pages/MngSub/MngSub";
+import NewSub from "./pages/NewSub/NewSub";
+import Settings from "./pages/Settings/Settings";
+import SignUp from "./pages/SignUp/SignUp";
+import SingleSub from "./pages/SingleSub/SingleSub";
+import Tips from "./pages/Tips/Tips";
+import welcomeScreen from "./pages/Welcome/Welcome";
+// import Header from "./Container/pages/Header";
+// import Footer from "./Container/pages/Footer";
 
 export default function PortfolioContainer() {
   const [currentPage, setCurrentPage] = useState("Home");
@@ -19,7 +19,7 @@ export default function PortfolioContainer() {
       return <Home />;
     }
     if (currentPage === "Welcome") {
-      return <Welcome />;
+      return <welcomeScreen />;
     }
     if (currentPage === "MngSub") {
       return <MngSub />;
@@ -44,7 +44,7 @@ export default function PortfolioContainer() {
   return (
     <div>
       {/* // TODO: Add a comment describing what we are passing as props */}
-      <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
+      {/* <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} /> */}
       {/* // TODO: Add a comment explaining what is happening on the following line */}
       {renderPage()}
     </div>

@@ -13,6 +13,11 @@ const userModel = new Schema({
         minLength: 6,
         maxLength: 36
     },
+    darkmode: {
+        type: Boolean,
+        default: false,
+        
+    }
     email: {
         type: String,
         required: true
