@@ -11,11 +11,11 @@ const subscriptionSchema = new Schema({
     paymentType: String,
     startDate: Date,
     // We might want dueDate as a Integer, representing the Day-of-Month
-    dueDate: Date,
-    autoPay: Boolean,
-    autoRenew: Boolean,
+    dueDate: {type: Number, min: 1, max: 31},
+    autoPay: {type: Boolean, default: false},
+    autoRenew: {type: Boolean, default: false}
 })
 
-const Subscriptions = model('Subscriptions', subscriptionSchema)
+const Subscription = model('Subscription', subscriptionSchema)
 
-module.export = Subscriptions
+module.export = Subscription

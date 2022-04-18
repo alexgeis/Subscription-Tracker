@@ -15,7 +15,7 @@ const typeDefs = gql`
     annualCost: Int,
     paymentType: String,
     startDate: Date,
-    dueDate: Date,
+    dueDate: Number,
     autoPay: Boolean,
     autoRenew: Boolean,
   }
