@@ -1,0 +1,1 @@
+import '../NewSub/newSub.css'

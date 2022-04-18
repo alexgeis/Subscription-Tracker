@@ -1,0 +1,1 @@
+import '../Welcome/welcome.css'

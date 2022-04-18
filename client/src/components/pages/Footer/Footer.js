@@ -1,0 +1,1 @@
+import '../Footer/footer.css'
