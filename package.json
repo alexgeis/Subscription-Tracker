@@ -6,7 +6,7 @@
   "proxy": "https://localhost:3001",
   "scripts": {
     "start": "node server/server.js --ignore client",
-    "develop": "concurrently \"cd server && npm run start\" \"cd client && npm start\"",
+    "develop": "cd server && npm run start && cd client && npm run start",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build"
