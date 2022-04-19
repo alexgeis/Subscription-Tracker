@@ -2,13 +2,13 @@ import { useState } from "react";
 import { Form, Image, Button, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Home/home.css";
-import Logo1 from "../Images/logo1.png";
-import Logo2 from "../Images/logo2.png";
-import Money from "../Images/raining-money.gif";
+import Logo1 from "../../Images/logo1.png";
+import Logo2 from "../../Images/logo2.png";
+import Money from "../../Images/raining-money.gif";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
-import { LOGIN_USER } from "../utils/mutations";
-import Auth from "../utils/auth";
+import { LOGIN_USER } from "../../utils/mutations";
+import AuthService from "../../utils/auth";
 
 // import Welcome from "./Welcome/Welcome";
 // import SignUp from "./SignUp/SignUp";
@@ -35,7 +35,7 @@ function Home() {
         variables: { ...formState },
       });
 
-      Auth.login(data.login.token); //json web token
+      AuthService.login(data.login.token); //json web token
     } catch (event) {
       console.error(event);
     }
@@ -52,7 +52,10 @@ function Home() {
   return (
     <>
       <Container>
-        <div>This is where the logo goes</div>
+        <img src={Money} class="img-fluid" id="money" />
+        <div id="logo">
+          <img src={Logo2} class="img-fluid" id="logo" alt="Logo" />
+        </div>
         <Form>
           <div>
             <Form.Group className="mb-3" controlId="formBasicEmail">

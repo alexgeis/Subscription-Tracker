@@ -6,7 +6,7 @@ const typeDefs = gql`
     username: String!
     password: String!
     email: String!
-    subscriptions: [String]
+    subscriptions: [Subscription]
   }
 
   type Subscription {
@@ -24,6 +24,7 @@ const typeDefs = gql`
   type Query {
     users: [User]
     subscriptions: [Subscription]
+    subscription(subscriptionId: ID!): Subscription
     # matchups(_id: String): [Matchup]
   }
 
@@ -37,7 +38,7 @@ const typeDefs = gql`
     ): User
     removeUser(userId: ID!): User
 
-    createSubscription(password: String!, email: String!): User
+    createSubscription(password: String!, email: String!): Subscription
     updateSubscription(
       _id: ID!
       subscriptionName: String
@@ -48,8 +49,8 @@ const typeDefs = gql`
       dueDate: Int
       autoPay: Boolean
       autoRenew: Boolean
-    ): User
-    removeSubscription(userId: ID!, subscription: String!): User
+    ): Subscription
+    removeSubscription(userId: ID!, subscription: String!): Subscription
   }
 `;
 
