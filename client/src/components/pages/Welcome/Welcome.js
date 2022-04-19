@@ -2,6 +2,7 @@ import "../Welcome/welcome.css";
 import React, { useState } from "react";
 import { Button, ButtonGroup, ToggleButton, Container } from "react-bootstrap";
 
+
 function Welcome() {
   const [checked, setChecked] = useState(false);
   const [radioValue, setRadioValue] = useState("1");
@@ -10,7 +11,7 @@ function Welcome() {
     { name: "Light Mode", value: "1" },
     { name: "Dark Mode", value: "2" },
   ];
-  
+
   const styles = {
     card: {
       margin: 20,
@@ -31,6 +32,7 @@ function Welcome() {
       background: "#00FF00",
     },
   };
+
   return (
     <>
       <div class="card">
@@ -90,6 +92,5 @@ function Welcome() {
     </>
   );
 }
-
 
 export default Welcome;
