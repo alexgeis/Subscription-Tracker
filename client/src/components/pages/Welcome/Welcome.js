@@ -1,4 +1,4 @@
-import '../Welcome/welcome.css'
+import "../Welcome/welcome.css";
 import React, { useState } from "react";
 import { Button, ButtonGroup, ToggleButton, Container } from "react-bootstrap";
 
@@ -34,13 +34,6 @@ function Welcome() {
   };
 
   return (
-    // needs title, Settings
-    //Need text for username
-    // need text for password
-    //adjust radio button for dark and light mode
-    // will need text box for name
-    // need two buttons for the bottom, one for home and one for logout
-
     <>
       <div class="card">
         <div class="card-body">
@@ -100,6 +93,4 @@ function Welcome() {
   );
 }
 
-
 export default Welcome;
-

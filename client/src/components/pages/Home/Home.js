@@ -10,9 +10,6 @@ import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../../utils/mutations";
 import AuthService from "../../utils/auth";
 
-// import Welcome from "./Welcome/Welcome";
-// import SignUp from "./SignUp/SignUp";
-
 function Home() {
   // const [loginInfo, setloginInfo] = useState("");
   const [formState, setFormState] = useState({ userName: "", password: "" });
