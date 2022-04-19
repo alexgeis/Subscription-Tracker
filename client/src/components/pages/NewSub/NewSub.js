@@ -1,5 +1,4 @@
 import '../NewSub/newSub.css'
-import '../src/App.css'
 import React, { useState } from 'react';
 import DatePicker from 'react-date-picker';
 

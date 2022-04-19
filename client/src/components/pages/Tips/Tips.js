@@ -7,7 +7,7 @@ import '../Tips/tips.css'
 
 function Tips() {
 return (
-    
+
 <div className="card">  
 <div className="card-body">
 
