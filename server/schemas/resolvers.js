@@ -8,6 +8,9 @@ const resolvers = {
     subscriptions: async () => {
       return await Subscription.find({});
     },
+    subscription: async (parent, {subscriptionId}) => {
+      return await Subscription.findOne({_id: subscriptionId})
+    }
   },
 
   Mutation: {
