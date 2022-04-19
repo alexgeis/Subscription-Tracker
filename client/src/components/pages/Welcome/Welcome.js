@@ -2,7 +2,7 @@ import "../Welcome/welcome.css";
 import React, { useState } from "react";
 import { Button, ButtonGroup, ToggleButton, Container } from "react-bootstrap";
 
-function Welcome() {
+export default function Welcome() {
   const [checked, setChecked] = useState(false);
   const [radioValue, setRadioValue] = useState("1");
 
