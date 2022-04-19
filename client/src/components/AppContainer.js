@@ -8,7 +8,7 @@ import Settings from "./pages/Settings/Settings";
 import SignUp from "./pages/SignUp/SignUp";
 import SingleSub from "./pages/SingleSub/SingleSub";
 import Tips from "./pages/Tips/Tips";
-import welcomeScreen from "./pages/Welcome/Welcome";
+import Welcome from "./pages/Welcome/Welcome";
 // import Header from "./Container/pages/Header";
 // import Footer from "./Container/pages/Footer";
 
@@ -21,7 +21,7 @@ export default function AppContainer() {
       return <Home />;
     }
     if (currentPage === "Welcome") {
-      return <welcomeScreen />;
+      return <Welcome />;
     }
     if (currentPage === "MngSub") {
       return <MngSub />;
