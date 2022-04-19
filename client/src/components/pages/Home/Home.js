@@ -52,7 +52,10 @@ function Home() {
   return (
     <>
       <Container>
-        <div>This is where the logo goes</div>
+        <img src={Money} class="img-fluid" id="money" />
+        <div id="logo">
+          <img src={Logo2} class="img-fluid" id="logo" alt="Logo" />
+        </div>
         <Form>
           <div>
             <Form.Group className="mb-3" controlId="formBasicEmail">
