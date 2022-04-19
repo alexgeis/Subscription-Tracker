@@ -1,8 +1,10 @@
+
+import '../Welcome/welcome.css'
 import React, { useState } from "react";
 import {Button, ButtonGroup, ToggleButton, Container} from "react-bootstrap";
 
-export default function WelcomeScreen() {
 
+function Welcome() {
     const [checked, setChecked] = useState(false);
     const [radioValue, setRadioValue] = useState('1');
   
@@ -41,7 +43,22 @@ return (
     // will need text box for name
     // need two buttons for the bottom, one for home and one for logout
 
-    <>
+
+<div class="card">
+<div class="card-body">
+    <h1>Welcome (Name Renders Here)</h1>
+<button class="btn btn-primary" type="button">Manage Subscription</button>
+<button class="btn btn-primary" type="button">Add A Subscription</button>
+<div id='thisMonth'>
+    This is where the subscriptions due this month will render
+</div>
+<div class="btn-group">
+<button type="button" class="btn btn-secondary btn-sm" id='tips'>Tips</button>
+<button type="button" class="btn btn-secondary btn-sm" id='logout' >Logout</button></div>
+</div>
+</div>
+  );
+}
       <Container>
           <h1 style={styles.heading}>Settings</h1>
           <p style={styles.button}>Place Holder User</p>
@@ -76,3 +93,4 @@ return (
     </>
   );
 }
+

@@ -1,0 +1,16 @@
+.card {
+    border: 1px black solid;
+    width: 350px;
+    justify-content: center !important;
+    
+    }
+    #thisMonth {
+    border: 1px solid black;
+    height: 60px;
+    }
+    
+    button {
+      /* width: 100px !important; */
+    font-size: small !important;
+    }
+    
