@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Form, Image, Button, Container } from "react-bootstrap";
-<<<<<<< HEAD
-import SettingsPage from "../Settings/Settings";
-import WelcomeScreen from "../Welcome/Welcome";
-=======
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../Home/home.css";
+import Logo1 from "../Images/logo1.png";
+import Logo2 from "../Images/logo2.png";
+import Money from "../Images/raining-money.gif";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
@@ -11,7 +12,6 @@ import Auth from "../utils/auth";
 
 // import Welcome from "./Welcome/Welcome";
 // import SignUp from "./SignUp/SignUp";
->>>>>>> main
 
 function Home() {
   // const [loginInfo, setloginInfo] = useState("");
