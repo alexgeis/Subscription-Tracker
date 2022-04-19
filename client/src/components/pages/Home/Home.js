@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Form, Image, Button, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Home/home.css";
-import Logo1 from "../../Images/logo1.png";
-import Logo2 from "../../Images/logo2.png";
+import Logo3 from "../../Images/logo3.png";
+// import Logo2 from "../../Images/logo2.png";
 import Money from "../../Images/raining-money.gif";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
@@ -51,18 +51,18 @@ function Home() {
       <Container>
         <img src={Money} class="img-fluid" id="money" />
         <div id="logo">
-          <img src={Logo2} class="img-fluid" id="logo" alt="Logo" />
+          <img src={Logo3} class="img-fluid" id="logo" alt="Logo" />
         </div>
         <Form>
           <div>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>User Name</Form.Label>
+              <Form.Label>Username</Form.Label>
               <Form.Control
                 type="text"
                 value={formState.userName}
                 name="userName"
                 onChange={handleInputChange}
-                placeholder="Enter User Name"
+                placeholder="Enter Username"
               />
             </Form.Group>
 
@@ -76,7 +76,6 @@ function Home() {
                 placeholder="Password"
               />
             </Form.Group>
-
             <Button variant="primary" type="submit" onClick={handleSubmit}>
               Login
             </Button>
