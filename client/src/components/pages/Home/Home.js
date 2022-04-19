@@ -7,8 +7,8 @@ import Logo2 from "../../Images/logo2.png";
 import Money from "../../Images/raining-money.gif";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
-import { LOGIN_USER } from "../utils/mutations";
-import Auth from "../utils/auth";
+import { LOGIN_USER } from "../../utils/mutations";
+import AuthService from "../../utils/auth";
 
 // import Welcome from "./Welcome/Welcome";
 // import SignUp from "./SignUp/SignUp";
@@ -35,7 +35,7 @@ function Home() {
         variables: { ...formState },
       });
 
-      Auth.login(data.login.token); //json web token
+      AuthService.login(data.login.token); //json web token
     } catch (event) {
       console.error(event);
     }
