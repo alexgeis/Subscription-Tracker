@@ -1,17 +1,6 @@
 import React, { useState } from "react";
 // import NavTabs from "./NavTabs"; - create this still
-<<<<<<< HEAD
-import Home from "./Container/pages/Home";
-// import MngSub from "./Container/pages/MngSub";
-// import NewSub from "./Container/pages/NewSub";
-// import Settings from "./Container/pages/Settings";
-// import SignUp from "./Container/pages/SignUp";
-// import SingleSub from "./Container/pages/SingleSub";
-// import Tips from "./Container/pages/Tips";
-// import Welcome from "./Container/pages/Welcome";
-// import Header from "./Container/pages/Header";
-// import Footer from "./Container/pages/Footer";
-=======
+
 import Home from "./pages/Home/Home";
 // import MngSub from "./components/pages/MngSub";
 // import NewSub from "./components/pages/NewSub";
@@ -22,7 +11,7 @@ import Home from "./pages/Home/Home";
 // import Welcome from "./components/pages/Welcome";
 // import Header from "./components/pages/Header";
 // import Footer from "./components/pages/Footer";
->>>>>>> d9e2f5ddbbd01db15bbb9b1d6bc040dc11879b67
+
 
 export default function AppContainer() {
   // const [currentPage, setCurrentPage] = useState("Home");
