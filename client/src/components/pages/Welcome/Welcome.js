@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 import '../Welcome/welcome.css'
-
-
-=======
-import "../Welcome/welcome.css";
 import React, { useState } from "react";
 import { Button, ButtonGroup, ToggleButton, Container } from "react-bootstrap";
->>>>>>> 5bb50b66251d987a2c8451aad4a27650bfaa5b84
+
 
 function Welcome() {
   const [checked, setChecked] = useState(false);
@@ -19,14 +12,6 @@ function Welcome() {
     { name: "Dark Mode", value: "2" },
   ];
 
-<<<<<<< HEAD
-export default Welcome;
-=======
-=======
-import React, { useState } from "react";
-import {Button, ButtonGroup, ToggleButton, Container} from "react-bootstrap";
->>>>>>> 2d64de9d52d06b85f7bddccb2a9943b47e9040eb
-=======
   const styles = {
     card: {
       margin: 20,
@@ -47,7 +32,6 @@ import {Button, ButtonGroup, ToggleButton, Container} from "react-bootstrap";
       background: "#00FF00",
     },
   };
->>>>>>> 5bb50b66251d987a2c8451aad4a27650bfaa5b84
 
   return (
     // needs title, Settings
@@ -115,14 +99,7 @@ import {Button, ButtonGroup, ToggleButton, Container} from "react-bootstrap";
     </>
   );
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 
 export default Welcome;
 
->>>>>>> d9e2f5ddbbd01db15bbb9b1d6bc040dc11879b67
-=======
->>>>>>> 2d64de9d52d06b85f7bddccb2a9943b47e9040eb
-=======
-export default Welcome;
->>>>>>> 5bb50b66251d987a2c8451aad4a27650bfaa5b84
