@@ -1,4 +1,6 @@
+const { AuthenticationError } = require("apollo-server-express");
 const { User, Subscription } = require("../models");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
@@ -8,21 +10,54 @@ const resolvers = {
     subscriptions: async () => {
       return await Subscription.find({});
     },
+
     subscription: async (parent, {subscriptionId}) => {
       return await Subscription.findOne({_id: subscriptionId})
     }
+
   },
 
   Mutation: {
+    //LOGIN
+    login: async (parent, { username, password }) => {
+      const user = await User.findOne({ username });
+
+      if (!user) {
+        throw new AuthenticationError("No user with this username found!");
+      }
+
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw new AuthenticationError("Incorrect password!");
+      }
+
+      const token = signToken(profile);
+      return { token, profile };
+    },
     //CREATE MUTATIONS
     createUser: async (parent, { username, password, email }) => {
-      return User.create({ username, password, email });
+      const user = User.create({ username, password, email });
+      const token = signToken(user);
+
+      return { token, user };
     },
-    createSubscription: async (parent, args) => {
-      const subscription = await Subscription.create(args);
-      return subscription;
+    createSubscription: async (parent, { userId, subscription }, context) => {
+      if (context.user) {
+        return User.findOneAndUpdate(
+          { _id: userId },
+          {
+            $addToSet: { subscriptions: subscription },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
-    //UPDATE MUTATIONS
+    //UPDATE MUTATIONS - NEED TO ADD TOKENS
     updateUser: async (parent, { _id, username, password, email }) => {
       return await User.findOneAndUpdate(
         { _id },
@@ -60,15 +95,21 @@ const resolvers = {
       );
     },
     //DELETE MUTATIONS
-    removeUser: async (parent, { userId }) => {
-      return User.findOneAndDelete({ _id: userId });
+    removeUser: async (parent, args, context) => {
+      if (context.user) {
+        return User.findOneAndDelete({ _id: context.user._id });
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
-    removeSubscription: async (parent, { userId, subscription }) => {
-      return User.findOneAndUpdate(
-        { _id: userId },
-        { $pull: { subscriptions: subscription } },
-        { new: true }
-      );
+    removeSubscription: async (parent, { subscription }) => {
+      if (context.user) {
+        return User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { subscriptions: subscription } },
+          { new: true }
+        );
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
   },
 };

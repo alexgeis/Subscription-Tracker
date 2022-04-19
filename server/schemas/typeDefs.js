@@ -21,6 +21,11 @@ const typeDefs = gql`
     autoRenew: Boolean
   }
 
+  type Auth {
+    token: ID!
+    user: User
+  }
+
   type Query {
     users: [User]
     subscriptions: [Subscription]
@@ -29,7 +34,8 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    createUser(username: String!, password: String!, email: String!): User
+    login(username: String!, password: String!): Auth
+    createUser(username: String!, password: String!, email: String!): Auth
     updateUser(
       _id: ID!
       username: String
@@ -38,7 +44,7 @@ const typeDefs = gql`
     ): User
     removeUser(userId: ID!): User
 
-    createSubscription(password: String!, email: String!): Subscription
+    createSubscription(subscriptionName: String!): User
     updateSubscription(
       _id: ID!
       subscriptionName: String
