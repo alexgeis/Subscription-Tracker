@@ -5,13 +5,15 @@
   "main": "index.js",
   "proxy": "https://localhost:3001",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node seeders/seed.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "apollo-server-express": "^3.6.7",
+    "bcrypt": "^5.0.1",
     "express": "^4.17.3",
     "graphql": "^16.3.0",
     "mongoose": "^6.3.0"
