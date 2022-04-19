@@ -1,16 +1,55 @@
 import { gql } from "@apollo/client";
 
 export const QUERY_USER = gql`
-  query user($username: String!) {
-    user(username: $username) {
+  query users {
+    users {
       _id
       username
+      password
       email
-      thoughts {
+      subscriptions {
         _id
-        thoughtText
-        createdAt
+        subscriptionName
+        monthlyCost
+        annualCost
+        paymentType
+        startDate
+        dueDate
+        autoPay
+        autoRenew
       }
     }
   }
 `;
+
+export const QUERY_SUBSCRIPTION = gql`
+  query subscriptions {
+    subscriptions {
+      _id
+      subscriptionName
+      monthlyCost
+      annualCost
+      paymentType
+      startDate
+      dueDate
+      autoPay
+      autoRenew
+    }
+  }
+`;
+
+export const QUERY_SINGLE_SUBSCRIPTION = gql`
+  query subscription($subscriptionId: ID!) {
+    subscriptions (subscriptionId: $subscriptionId){
+      _id
+      subscriptionName
+      monthlyCost
+      annualCost
+      paymentType
+      startDate
+      dueDate
+      autoPay
+      autoRenew
+    }
+  }
+`

@@ -8,6 +8,9 @@ const resolvers = {
     subscriptions: async () => {
       return await Subscription.find({});
     },
+    subscription: async (parent, {subscriptionId}) => {
+      return await Subscription.findOne({_id: subscriptionId})
+    }
   },
 
   Mutation: {
@@ -16,8 +19,8 @@ const resolvers = {
       return User.create({ username, password, email });
     },
     createSubscription: async (parent, args) => {
-      const user = await Subscription.create(args);
-      return user;
+      const subscription = await Subscription.create(args);
+      return subscription;
     },
     //UPDATE MUTATIONS
     updateUser: async (parent, { _id, username, password, email }) => {

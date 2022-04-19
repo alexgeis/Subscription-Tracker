@@ -1,8 +1,9 @@
-import "../Welcome/welcome.css";
+import '../Welcome/welcome.css'
 import React, { useState } from "react";
 import { Button, ButtonGroup, ToggleButton, Container } from "react-bootstrap";
 
-export default function Welcome() {
+
+function Welcome() {
   const [checked, setChecked] = useState(false);
   const [radioValue, setRadioValue] = useState("1");
 
@@ -98,3 +99,7 @@ export default function Welcome() {
     </>
   );
 }
+
+
+export default Welcome;
+
