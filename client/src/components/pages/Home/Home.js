@@ -49,6 +49,7 @@ function Home() {
   return (
     <>
       <Container>
+      <div className="card"/>
         <img src={Money} class="img-fluid" id="money" />
         <div id="logo">
           <img src={Logo3} class="img-fluid" id="logo" alt="Logo" />
