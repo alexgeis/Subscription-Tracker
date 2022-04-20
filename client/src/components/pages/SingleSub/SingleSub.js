@@ -5,6 +5,7 @@ import { Button, InputGroup, FormControl}  from "react-bootstrap";
 
 function SingleSub() {
     return (
+        <div className="card">
 <div className="container">      
 <h1>Subscription Name</h1>
 <InputGroup className="mb-3">
@@ -32,6 +33,7 @@ function SingleSub() {
             Delete
         </Button>
         </div>
+    </div>
     </div>
 );
 }
