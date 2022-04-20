@@ -12,7 +12,7 @@ import AuthService from "../../utils/auth";
 function Home() {
   // const [loginInfo, setloginInfo] = useState("");
   const [formState, setFormState] = useState({ userName: "", password: "" });
-  // const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [login, { error, data }] = useMutation(LOGIN_USER);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -26,15 +26,15 @@ function Home() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
-    // try {
-    //   const { data } = await login({
-    //     variables: { ...formState },
-    //   });
+    try {
+      const { data } = await login({
+        variables: { ...formState },
+      });
 
-    //   AuthService.login(data.login.token); //json web token
-    // } catch (event) {
-    //   console.error(event);
-    // }
+      AuthService.login(data.login.token); //json web token
+    } catch (event) {
+      console.error(event);
+    }
 
     // clear form values
     setFormState({
@@ -48,7 +48,7 @@ function Home() {
   return (
     <>
       <Container>
-      <div className="card"/>
+        <div className="card" />
         <img src={Money} className="img-fluid" id="money" />
         <div id="logo">
           <img src={Logo3} className="img-fluid" id="logo" alt="Logo" />
