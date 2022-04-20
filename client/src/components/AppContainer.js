@@ -13,7 +13,7 @@ export default function AppContainer() {
 
   const renderPage = () => {
     if (currentPage === "Home") {
-      return <Home />;
+      return <null />;
     }
     if (currentPage === "Welcome") {
       return <Welcome />;
