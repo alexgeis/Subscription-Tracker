@@ -47,8 +47,8 @@ function Home() {
 
   return (
     <>
-      <Container>
-      <div className="card"/>
+      <Container >
+        <div className="homeContainer"/>
         <img src={Money} className="img-fluid" id="money" />
         <div id="logo">
           <img src={Logo3} className="img-fluid" id="logo" alt="Logo" />
@@ -80,6 +80,7 @@ function Home() {
               Login
             </Button>
           </div>
+          <br></br>
           <p>OR </p>
           <div>
             <Button
@@ -89,7 +90,7 @@ function Home() {
             >
               Sign Up
             </Button>
-          </div>
+            </div> 
         </Form>
       </Container>
     </>
