@@ -1,4 +1,5 @@
 import "../Footer/footer.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Footer({ currentPage, handlePageChange }) {
   return (

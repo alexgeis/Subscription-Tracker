@@ -1,5 +1,5 @@
 import '../MngSub/mngSub.css'
-
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function MngSub() {
     return (

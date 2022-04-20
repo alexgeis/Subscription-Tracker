@@ -1,6 +1,6 @@
 import '../SingleSub/singleSub.css'
 import { Container, Card, Row, Col } from 'react-bootstrap'
-
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, InputGroup, FormControl}  from "react-bootstrap";
 
 function SingleSub() {
