@@ -32,18 +32,18 @@ const userModel = new Schema({
 });
 
 //BCRYPT HASH PASSWORD CODE
-// userModel.pre("save", async function (next) {
-//   if (this.isNew || this.isModified("password")) {
-//     const saltRounds = 10;
-//     this.password = await bcrypt.hash(this.password, saltRounds);
-//   }
+userModel.pre("save", async function (next) {
+  if (this.isNew || this.isModified("password")) {
+    const saltRounds = 10;
+    this.password = await bcrypt.hash(this.password, saltRounds);
+  }
 
-//   next();
-// });
+  next();
+});
 
-// userModel.methods.isCorrectPassword = async function (password) {
-//   return bcrypt.compare(password, this.password);
-// };
+userModel.methods.isCorrectPassword = async function (password) {
+  return bcrypt.compare(password, this.password);
+};
 
 const User = model("User", userModel);
 

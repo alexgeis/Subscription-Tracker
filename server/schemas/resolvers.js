@@ -19,6 +19,7 @@ const resolvers = {
   Mutation: {
     //LOGIN
     login: async (parent, { username, password }) => {
+      console.log("login resolver function")
       const user = await User.findOne({ username });
 
       if (!user) {
