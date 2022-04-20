@@ -8,6 +8,7 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import { setContext } from "@apollo/client/link/context";
 const httpLink = createHttpLink({
@@ -36,13 +37,27 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <UserProvider>
-        <div className="App">
-          <AppContainer />
+    //     <UserProvider>
+      <div className="App">
+        <AppContainer />
         </div>
-      </UserProvider>
+   //   </UserProvider>
     </ApolloProvider>
+
   );
 }
 
 export default App;
+
+
+// function App() {
+//   return (
+//     <UserProvider>
+//       <div className="App">
+//         <AppContainer />
+//       </div>
+//     </UserProvider>
+//   );
+// }
+
+// export default App;

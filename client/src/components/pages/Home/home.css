@@ -1,3 +1,10 @@
+* {
+    font-family: 'Kalam', cursive;
+    font-weight: bold;
+    color: black;
+}
+
+
 #logo {
     max-height: 300px;
     min-height: 100px;
@@ -14,8 +21,6 @@
     border-radius: 25px;
     background: rgb(215, 179, 119);
     background: radial-gradient(circle, rgba(215, 179, 119, 0.7791491596638656) 27%, rgba(89, 201, 165, 0.742734593837535) 100%);
-    /* background: rgb(215,179,119);
-background: radial-gradient(circle, rgba(215,179,119,1) 0%, rgba(89, 201, 165, 0.863) 100%); */
     padding: 20px 20px 20px 20px;
     margin-left: 70px;
     margin-right: 70px;
