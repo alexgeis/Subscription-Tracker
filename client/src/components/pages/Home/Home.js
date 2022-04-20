@@ -11,7 +11,7 @@ import AuthService from "../../utils/auth";
 
 function Home() {
   // const [loginInfo, setloginInfo] = useState("");
-  const [formState, setFormState] = useState({ userName: "", password: "" });
+  const [formState, setFormState] = useState({ username: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
   const handleInputChange = (event) => {
@@ -38,7 +38,7 @@ function Home() {
 
     // clear form values
     setFormState({
-      userName: "",
+      username: "",
       password: "",
     });
   };
@@ -59,8 +59,8 @@ function Home() {
               <Form.Label>Username</Form.Label>
               <Form.Control
                 type="text"
-                value={formState.userName}
-                name="userName"
+                value={formState.username}
+                name="username"
                 onChange={handleInputChange}
                 placeholder="Enter Username"
               />

@@ -39,10 +39,10 @@ export default function AppContainer() {
 
   return (
     <div>
-      <Home currentPage={currentPage} handlePageChange={handlePageChange} />
+      {/* <Home currentPage={currentPage} handlePageChange={handlePageChange} /> */}
 
-      <Footer />
       {renderPage()}
+      <Footer currentPage={currentPage} handlePageChange={handlePageChange} />
     </div>
   );
 }
