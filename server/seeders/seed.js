@@ -4,11 +4,15 @@ const userData = require("./userData.json");
 const subscriptionData = require("./subscriptionData.json");
 
 db.once("open", async () => {
-  await User.deleteMany({});
   await Subscription.deleteMany({});
-  await User.create(userData);
+  await User.deleteMany({});
   await Subscription.create(subscriptionData);
+  await User.create(userData);
+
+  
 
   console.log("all done!");
   process.exit(0);
 });
+
+// Capture IDs, put them in an array, randomly put new ids into user arrays
