@@ -28,6 +28,7 @@ module.exports = () => {
       new InjectManifest({
         swSrc: "./src-sw.js",
         swDest: "src-sw.js",
+        maximumFileSizeToCacheInBytes: 5000000,
       }),
 
       // Creates a manifest.json file.
@@ -59,13 +60,17 @@ module.exports = () => {
           use: ["style-loader", "css-loader"],
         },
         {
-          test: /\.(js|jsx)$/,
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: "asset/resource",
+        },
+        {
+          test: /\.js$/,
           exclude: /node_modules/,
           // We use babel-loader in order to use ES6.
           use: {
             loader: "babel-loader",
             options: {
-              presets: ["@babel/preset-env"],
+              presets: ["@babel/preset-env", "@babel/preset-react"],
               plugins: [
                 "@babel/plugin-proposal-object-rest-spread",
                 "@babel/transform-runtime",
