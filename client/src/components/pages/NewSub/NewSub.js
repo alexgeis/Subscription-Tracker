@@ -1,7 +1,7 @@
 import '../NewSub/newSub.css'
 import React, { useState } from 'react';
 import DatePicker from 'react-date-picker';
-
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function NewSub() {
 

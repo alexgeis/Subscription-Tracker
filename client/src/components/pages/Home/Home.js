@@ -3,7 +3,6 @@ import { Form, Image, Button, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Home/home.css";
 import Logo3 from "../../Images/logo3.png";
-// import Logo2 from "../../Images/logo2.png";
 import Money from "../../Images/raining-money.gif";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";

@@ -1,7 +1,7 @@
 import "../Welcome/welcome.css";
 import React, { useState } from "react";
 import { Button, ButtonGroup, ToggleButton, Container } from "react-bootstrap";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Welcome() {
   const [checked, setChecked] = useState(false);
