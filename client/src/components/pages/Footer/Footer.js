@@ -6,7 +6,7 @@ function Footer({ currentPage, handlePageChange }) {
     <div className="btn-group">
       <ul className="footerButtons">
         <li className="footer-items">
-          <button type="button" class="btn btn-secondary btn-sm" id="welcome">
+          <button type="button" className="btn btn-secondary btn-sm" id="welcome">
             <a
               href="#home"
               onClick={() => handlePageChange("Welcome")}
@@ -17,7 +17,7 @@ function Footer({ currentPage, handlePageChange }) {
           </button>
         </li>
         <li className="footer-items">
-          <button type="button" class="btn btn-secondary btn-sm" id="logout">
+          <button type="button" className="btn btn-secondary btn-sm" id="logout">
             <a
               href="#home"
               onClick={() => handlePageChange("Home")}
