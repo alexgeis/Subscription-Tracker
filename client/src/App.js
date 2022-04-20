@@ -9,25 +9,10 @@ function App() {
   return (
     <UserProvider>
       <div className="App">
-        <NewSub />
+        <AppContainer />
       </div>
     </UserProvider>
   );
 }
 
 export default App;
-
-
-
-
-// function App() {
-//   return (
-//     <UserProvider>
-//       <div className="App">
-//         <AppContainer />
-//       </div>
-//     </UserProvider>
-//   );
-// }
-
-// export default App;
