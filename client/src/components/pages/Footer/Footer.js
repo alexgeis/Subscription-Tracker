@@ -2,7 +2,7 @@ import "../Footer/footer.css";
 
 function Footer({ currentPage, handlePageChange }) {
   return (
-    <div class="btn-group">
+    <div className="btn-group">
       <ul className="footerButtons">
         <li className="footer-items">
           <button type="button" class="btn btn-secondary btn-sm" id="welcome">

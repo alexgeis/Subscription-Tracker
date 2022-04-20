@@ -8,13 +8,13 @@ function MngSub() {
 <h1>Manage My Subscriptions</h1>    
 <div className="card-body">
 <div class="row justify-content-around">
-    <div class="col-4">
+    <div className="col-4">
         <h3>All Subscriptions</h3>
         <ul>
     <li>Render Subscriptions</li>
     </ul>
     </div>
-    <div class="col-4">
+    <div className="col-4">
     <h3>Monthly Costs</h3>
     <ul>
     <li>Render Cost</li>
