@@ -37,13 +37,13 @@ module.exports = () => {
         name: "Subscription Tracker",
         short_name: "SubTracker",
         description: "Track your total subscription costs and budget with ease",
-        background_color: "#225ca3",
-        theme_color: "#225ca3",
+        background_color: "#59c9A5",
+        theme_color: "#59c9A5",
         start_url: "/",
         publicPath: "/",
         icons: [
           {
-            src: path.resolve("src/components/images/logo2.png"),
+            src: path.resolve("src/components/images/logo3.png"),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join("assets", "icons"),
           },
