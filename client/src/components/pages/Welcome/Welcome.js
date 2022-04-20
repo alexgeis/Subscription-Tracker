@@ -1,7 +1,7 @@
 import "../Welcome/welcome.css";
 import React, { useState } from "react";
 import { Button, ButtonGroup, ToggleButton, Container } from "react-bootstrap";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Welcome() {
   const [checked, setChecked] = useState(false);
@@ -35,60 +35,28 @@ function Welcome() {
 
   return (
     <>
-      <div class="card">
-        <div class="card-body">
+      <div className="card">
+        <div className="card-body">
           <h1>Welcome (Name Renders Here)</h1>
-          <button class="btn btn-primary" type="button">
+          <button className="btn btn-primary" type="button">
             Manage Subscription
           </button>
-          <button class="btn btn-primary" type="button">
+          <button className="btn btn-primary" type="button">
             Add A Subscription
           </button>
           <div id="thisMonth">
             This is where the subscriptions due this month will render
           </div>
-          <div class="btn-group">
-            <button type="button" class="btn btn-secondary btn-sm" id="tips">
+          <div className="btn-group">
+            <button type="button" className="btn btn-secondary btn-sm" id="tips">
               Tips
             </button>
-            <button type="button" class="btn btn-secondary btn-sm" id="logout">
+            <button type="button" className="btn btn-secondary btn-sm" id="logout">
               Logout
             </button>
           </div>
         </div>
       </div>
-
-      <Container>
-        <h1 style={styles.heading}>Settings</h1>
-        <p style={styles.button}>Place Holder User</p>
-        <p>Place Holder Password</p>
-
-        <ButtonGroup>
-          {radios.map((radio, idx) => (
-            <ToggleButton
-              key={idx}
-              id={`radio-${idx}`}
-              type="radio"
-              variant={idx % 2 ? "dark" : "light"}
-              name="radio"
-              value={radio.value}
-              checked={radioValue === radio.value}
-              onChange={(e) => setRadioValue(e.currentTarget.value)}
-            >
-              {radio.name}
-            </ToggleButton>
-          ))}
-        </ButtonGroup>
-        <p>Place Holder Name</p>
-        <div className="mb-2">
-          <Button variant="primary" size="lg">
-            Home
-          </Button>{" "}
-          <Button variant="danger" size="lg">
-            Logout
-          </Button>
-        </div>
-      </Container>
     </>
   );
 }

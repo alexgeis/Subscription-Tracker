@@ -66,12 +66,12 @@ export const UPDATE_USER = gql`
   }
 `;
 
-export const REMOVE_USER = gql`
-  mutation removeUser($userId: ID!) {
-  removeUser(userId: $userId) {
-  }
-}
-`;
+// export const REMOVE_USER = gql`
+//   mutation removeUser($userId: ID!) {
+//   removeUser(userId: $userId) {
+//   }
+// }
+// `;
 
 export const CREATE_SUBSCRIPTION = gql`
   mutation CreateSubscription($password: String!, $email: String!) {

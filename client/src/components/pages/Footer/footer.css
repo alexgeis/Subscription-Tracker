@@ -1,0 +1,16 @@
+.footerButtons {
+    padding-top: 80px;
+}
+
+.footer-items {
+        display: inline-block;
+        text-align: center;
+        color: white !important;
+        cursor: pointer;
+        padding-right: 50px;
+}
+
+a {
+    color: whitesmoke !important;
+    text-decoration: none;
+}
