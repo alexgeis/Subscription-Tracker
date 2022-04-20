@@ -1,7 +1,7 @@
 /* 
 code below is for the install button for a PWA
 
-Example HTML/JSX for this button:
+Example HTML/JSX to use for this button:
 <div>
         <a id="buttonInstall" role="button">Install!</a>
 </div>
