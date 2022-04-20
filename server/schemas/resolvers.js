@@ -11,10 +11,9 @@ const resolvers = {
       return await Subscription.find({});
     },
 
-    subscription: async (parent, {subscriptionId}) => {
-      return await Subscription.findOne({_id: subscriptionId})
-    }
-
+    subscription: async (parent, { subscriptionId }) => {
+      return await Subscription.findOne({ _id: subscriptionId });
+    },
   },
 
   Mutation: {
@@ -32,8 +31,8 @@ const resolvers = {
         throw new AuthenticationError("Incorrect password!");
       }
 
-      const token = signToken(profile);
-      return { token, profile };
+      const token = signToken(user);
+      return { token, user };
     },
     //CREATE MUTATIONS
     createUser: async (parent, { username, password, email }) => {

@@ -37,15 +37,15 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-    //     <UserProvider>
+      {/* <UserProvider> */}
       <div className="App">
         <AppContainer />
-        </div>
-   //   </UserProvider>
+      </div>
+      {/* </UserProvider> */}
     </ApolloProvider>
-
   );
 }
+
 
 export default App;
 

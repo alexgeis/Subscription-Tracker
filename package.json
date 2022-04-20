@@ -2,8 +2,8 @@
   "name": "subscription-tracker",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "proxy": "https://localhost:3001",
+  "main": "server/server.js",
+  
   "scripts": {
     "start": "node server/server.js --ignore client",
     "develop": "concurrently \"cd server && npm run start\" \"cd client && npm run start\"",
