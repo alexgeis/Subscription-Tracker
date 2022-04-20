@@ -2,52 +2,62 @@
     {
       "username": "Brian6",
       "password": "secrets",
-      "email": "brian@gmail.com"
+      "email": "brian@gmail.com",
+      "subscriptions": ["62605faf775dc377dfd36c33", "62606473e7c399af394ea037","62606473e7c399af394ea038"]
     },
     {
       "username": "PaperTiger",
       "password": "secretsecret",
-      "email": "papertiger@gmail.com"
+      "email": "papertiger@gmail.com",
+      "subscriptions": ["62606473e7c399af394ea039"]
     },
     {
       "username": "narrow",
       "password": "supersecret",
-      "email": "narrow@gmail.com"
+      "email": "narrow@gmail.com",
+      "subscriptions": ["62605faf775dc377dfd36c33", "62606473e7c399af394ea03a"]
     },
     {
       "username": "habitual",
       "password": "password",
-      "email": "habitual@gmail.com"
+      "email": "habitual@gmail.com",
+      "subscriptions": ["62606473e7c399af394ea03b", "62606473e7c399af394ea03c"]
     },
     {
       "username": "waterWalker",
       "password": "password47",
-      "email": "eddy@gmail.com"
+      "email": "eddy@gmail.com",
+      "subscriptions": ["62606473e7c399af394ea03d"]
     },
     {
       "username": "AlanKay",
       "password": "secretpassword",
-      "email": "alan@gmail.com"
+      "email": "alan@gmail.com",
+      "subscriptions": ["62606473e7c399af394ea03e", "62606473e7c399af394ea03d"]
     },
     {
       "username": "UserIntent",
       "password": "passwordsecret",
-      "email": "userintent@gmail.com"
+      "email": "userintent@gmail.com",
+      "subscriptions": ["62606473e7c399af394ea03a", "62606473e7c399af394ea03d"]
     },
     {
       "username": "DaveThomas",
       "password": "superpassword",
-      "email": "dave@gmail.com"
+      "email": "dave@gmail.com",
+      "subscriptions": ["62606473e7c399af394ea03b"]
     },
     {
       "username": "PerfectCircle",
       "password": "schism",
-      "email": "maynardjameskeenan@gmail.com"
+      "email": "maynardjameskeenan@gmail.com",
+      "subscriptions": ["62606473e7c399af394ea039", "62606473e7c399af394ea03c"]
     },
     {
       "username": "SylviaWrath",
       "password": "passwordpassword",
-      "email": "sylvia@gmail.com"
+      "email": "sylvia@gmail.com",
+      "subscriptions": ["62606473e7c399af394ea03d", "62605faf775dc377dfd36c33", "62606473e7c399af394ea037"]
     }
   ]
   

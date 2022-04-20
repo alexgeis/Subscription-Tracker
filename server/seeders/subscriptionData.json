@@ -1,5 +1,6 @@
 [
     {
+      "_id": "62605faf775dc377dfd36c33",
       "subscriptionName": "Netflix",
       "monthlyCost": 4,
       "annualCost": 48,
@@ -10,6 +11,7 @@
       "autoRenew": false
     },
     {
+      "_id": "62606473e7c399af394ea037",
       "subscriptionName": "Hulu",
       "monthlyCost": 5,
       "annualCost": 60,
@@ -20,6 +22,7 @@
       "autoRenew": false
     },
     {
+      "_id": "62606473e7c399af394ea038",
       "subscriptionName": "HBO",
       "monthlyCost": 6,
       "annualCost": 72,
@@ -30,6 +33,7 @@
       "autoRenew": false
     },
     {
+      "_id": "62606473e7c399af394ea039",
       "subscriptionName": "Splice",
       "monthlyCost": 3,
       "annualCost": 36,
@@ -40,6 +44,7 @@
       "autoRenew": false
     },
     {
+      "_id": "62606473e7c399af394ea03a",
       "subscriptionName": "Patreon",
       "monthlyCost": 4,
       "annualCost": 48,
@@ -50,6 +55,7 @@
       "autoRenew": true
     },
     {
+      "_id": "62606473e7c399af394ea03b",
       "subscriptionName": "Spotify",
       "monthlyCost": 6,
       "annualCost": 72,
@@ -60,6 +66,7 @@
       "autoRenew": false
     },
     {
+      "_id": "62606473e7c399af394ea03c",
       "subscriptionName": "Freshly",
       "monthlyCost": 7,
       "annualCost": 84,
@@ -70,6 +77,7 @@
       "autoRenew": false
     },
     {
+      "_id": "62606473e7c399af394ea03d",
       "subscriptionName": "Charity Donation",
       "monthlyCost": 5,
       "annualCost": 60,
@@ -80,6 +88,7 @@
       "autoRenew": false
     },
     {
+      "_id": "62606473e7c399af394ea03e",
       "subscriptionName": "Squarespace",
       "monthlyCost": 9,
       "annualCost": 108,
