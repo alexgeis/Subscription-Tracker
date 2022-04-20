@@ -13,6 +13,9 @@ function Home() {
   // const [loginInfo, setloginInfo] = useState("");
   const [formState, setFormState] = useState({ username: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN_USER);
+  if (error){
+    console.error(JSON.stringify(error.message))
+  }
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -27,13 +30,16 @@ function Home() {
     event.preventDefault();
     console.log(formState);
     try {
+      console.log("I'm happening at all")
+      console.log({...formState})
+      console.log(login)
       const { data } = await login({
         variables: { ...formState },
       });
-
+      console.log(`I'm on line 33 here's some ${data}`)
       AuthService.login(data.login.token); //json web token
-    } catch (event) {
-      console.error(event);
+    } catch (error) {
+      console.error(JSON.stringify(error));
     }
 
     // clear form values
