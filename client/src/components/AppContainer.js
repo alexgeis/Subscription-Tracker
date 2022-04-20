@@ -10,44 +10,6 @@ import Welcome from "./pages/Welcome/Welcome";
 import Footer from "./pages/Footer/Footer";
 
 export default function AppContainer() {
-<<<<<<< HEAD
-  const [currentPage, setCurrentPage] = useState("Home");
-
-  const renderPage = () => {
-    if (currentPage === "Home") {
-      return <Home />;
-    }
-    if (currentPage === "Welcome") {
-      return <Welcome />;
-    }
-    if (currentPage === "MngSub") {
-      return <MngSub />;
-    }
-    if (currentPage === "NewSub") {
-      return <NewSub />;
-    }
-    if (currentPage === "Settings") {
-      return <Settings />;
-    }
-    if (currentPage === "SignUp") {
-      return <SignUp />;
-    }
-    if (currentPage === "SingleSub") {
-      return <SingleSub />;
-    }
-  };
-
-  const handlePageChange = (page) => setCurrentPage(page);
-
-  // return (
-  //   <div>
-  //     {/* <Home currentPage={currentPage} handlePageChange={handlePageChange} /> */}
-
-  //     {renderPage()}
-  //     <Footer currentPage={SingleSub} handlePageChange={handlePageChange} />
-  //   </div>
-//   );
-=======
 return (
       <Router>
           <div>
@@ -85,6 +47,15 @@ return (
           <Footer />
       </Router>
   );
->>>>>>> a88b11af152cf2ada7c72ac4319ce01dda8d1c4d
 }
+  // const handlePageChange = (page) => setCurrentPage(page);
+
+  // return (
+  //   <div>
+  //     {/* <Home currentPage={currentPage} handlePageChange={handlePageChange} /> */}
+
+  //     {renderPage()}
+  //     <Footer currentPage={SingleSub} handlePageChange={handlePageChange} />
+  //   </div>
+//   );
 
