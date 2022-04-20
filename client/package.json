@@ -2,7 +2,15 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+<<<<<<< HEAD
   "proxy": "https://localhost:3001",
+=======
+<<<<<<< HEAD
+  "proxy": "https://localhost:3000",
+=======
+  "proxy": "http://localhost:3001",
+>>>>>>> 18b4e20a843219b08c22b57bb1f68e98f3ce8567
+>>>>>>> 38f7b96887c9ca4675ed9538ed22e0d6af1c1742
   "dependencies": {
     "@apollo/client": "^3.5.10",
     "@auth0/auth0-react": "^1.10.0",
