@@ -46,8 +46,13 @@ function App() {
   );
 }
 
+
 export default App;
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 38f7b96887c9ca4675ed9538ed22e0d6af1c1742
 // function App() {
 //   return (
 //     <UserProvider>
@@ -58,4 +63,8 @@ export default App;
 //   );
 // }
 
+<<<<<<< HEAD
 // export default App;
+=======
+// export default App;
+>>>>>>> 38f7b96887c9ca4675ed9538ed22e0d6af1c1742
