@@ -42,7 +42,7 @@ export default function AppContainer() {
       {/* <Home currentPage={currentPage} handlePageChange={handlePageChange} /> */}
 
       {renderPage()}
-      <Footer currentPage={currentPage} handlePageChange={handlePageChange} />
+      <Footer currentPage={SingleSub} handlePageChange={handlePageChange} />
     </div>
   );
 }
