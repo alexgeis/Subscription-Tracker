@@ -14,7 +14,8 @@ module.exports = () => {
     // Output for our bundles
     output: {
       filename: "[name].bundle.js",
-      path: path.resolve(__dirname, "dist"),
+      path: path.resolve(__dirname, "./public"),
+      //  path: path.resolve(__dirname, "dist"),
     },
     plugins: [
       // Webpack plugin that generates our html file and injects our bundles.
@@ -58,7 +59,7 @@ module.exports = () => {
           use: ["style-loader", "css-loader"],
         },
         {
-          test: /\.m?js$/,
+          test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           // We use babel-loader in order to use ES6.
           use: {
@@ -73,6 +74,9 @@ module.exports = () => {
           },
         },
       ],
+    },
+    resolve: {
+      extensions: ["*", ".js", ".jsx"],
     },
   };
 };
