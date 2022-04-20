@@ -10,11 +10,15 @@ const resolvers = {
     subscriptions: async () => {
       return await Subscription.find({});
     },
-
-    subscription: async (parent, {subscriptionId}) => {
-      return await Subscription.findOne({_id: subscriptionId})
-    }
-
+    me: async (parent, args, context) => {
+      if (context.user) {
+        return User.findOne({ _id: context.user._id });
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    subscription: async (parent, { subscriptionId }) => {
+      return await Subscription.findOne({ _id: subscriptionId });
+    },
   },
 
   Mutation: {
