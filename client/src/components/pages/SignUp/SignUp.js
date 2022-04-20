@@ -16,7 +16,7 @@ function SignUp() {
     }
   }
   return (
-    
+    <div className="card">
     <div class="m-4">
       <h1>SIGN UP</h1>
     <form action="/examples/actions/confirmation.php" method="post">
@@ -48,6 +48,7 @@ function SignUp() {
             </div>
         </div>
     </form>
+</div>
 </div>
   )
 }

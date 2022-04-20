@@ -8,8 +8,8 @@ function NewSub() {
     const [value, onChange] = useState(new Date());
 
     return (
-        <div>
-        <div id='card'> 
+        
+        <div className='card'> 
         <h1>Add New Subscription</h1>
     <label for="name">Subscription Name: </label>
     <input type="text" id="name" name="name"/><br></br>
@@ -30,7 +30,7 @@ function NewSub() {
     <br></br>
     <button type="submit">Save</button>
     </div>
-    </div>
+    
 );
 }
 

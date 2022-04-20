@@ -5,7 +5,6 @@ import NewSub from "./pages/NewSub/NewSub";
 import Settings from "./pages/Settings/Settings";
 import SignUp from "./pages/SignUp/SignUp";
 import SingleSub from "./pages/SingleSub/SingleSub";
-import Tips from "./pages/Tips/Tips";
 import Welcome from "./pages/Welcome/Welcome";
 import Footer from "./pages/Footer/Footer";
 
@@ -34,7 +33,6 @@ export default function AppContainer() {
     if (currentPage === "SingleSub") {
       return <SingleSub />;
     }
-    return <Tips />;
   };
 
   const handlePageChange = (page) => setCurrentPage(page);
