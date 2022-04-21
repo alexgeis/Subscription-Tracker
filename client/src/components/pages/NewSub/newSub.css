@@ -1,10 +1,11 @@
-#card {
-    align-items: center !important;
-    border: 1px black solid !important;
-    justify-content: center !important;
-    width: 400px;
-    text-align: center;
-    padding: 10px 10px 10px 10px;
+#newSub {
+    background-color: #D7B377;
+    padding: 20px 20px 20px 20px;
+    font-weight: bolder;
+    border-radius: 5px;
+    text-decoration: underline;
+    margin-bottom: 25px;
+    font-family: 'Kalam', cursive; 
 }
 
 #subDesc {
@@ -17,4 +18,27 @@
 label {
     padding: 5px 5px 5px 5px;
 
+}
+#newSubBtn {
+    font-size: large !important;
+    border-radius: 5px;
+}
+
+datePicker {
+    width: 200px !important;
+    
+}
+
+.react-date-picker__wrapper {
+    width: 150px;
+    height: 80px;
+    background-color: none;
+    /* border: none !important; */
+    display: inline-block !important;
+    padding: 5px 5px 5px 5px;
+}
+.react-date-picker__button {
+    color: white !important;
+    background-color: none !important;
+    /* box-shadow: none !important; */
 }

@@ -12,51 +12,50 @@ function Welcome() {
     { name: "Dark Mode", value: "2" },
   ];
 
-  const styles = {
-    card: {
-      margin: 20,
-      background: "#e8eaf6",
-    },
-    heading: {
-      background: "#3f51b5",
-      minHeight: 50,
-      lineHeight: 3.5,
-      fontSize: "1.2rem",
-      color: "white",
-      padding: "0 20px",
-    },
-    content: {
-      padding: 20,
-    },
-    button: {
-      background: "#00FF00",
-    },
-  };
+  // const styles = {
+  //   card: {
+  //     margin: 20,
+  //     background: "#e8eaf6",
+  //   },
+  //   heading: {
+  //     background: "#3f51b5",
+  //     minHeight: 50,
+  //     lineHeight: 3.5,
+  //     fontSize: "1.2rem",
+  //     color: "white",
+  //     padding: "0 20px",
+  //   },
+  //   content: {
+  //     padding: 20,
+  //   },
+  //   button: {
+  //     background: "#00FF00",
+  //   },
+  // };
 
   return (
     <>
-      <div className="card">
-        <div className="card-body">
-          <h1>Welcome (Name Renders Here)</h1>
-          <button className="btn btn-primary" type="button">
-            Manage Subscription
+      <div class="container-fluid">
+          <h1 id="welcomeScreen">Welcome (Name Renders Here)</h1>
+          <button id="addSubBtn" className="btn btn-primary" type="button">
+            Manage Subscriptions
           </button>
-          <button className="btn btn-primary" type="button">
+          <br></br>
+          <button id="addSubBtn" className="btn btn-primary" type="button">
             Add A Subscription
           </button>
           <div id="thisMonth">
-            This is where the subscriptions due this month will render
-          </div>
-          <div className="btn-group">
-            <button type="button" className="btn btn-secondary btn-sm" id="tips">
-              Tips
-            </button>
-            <button type="button" className="btn btn-secondary btn-sm" id="logout">
-              Logout
-            </button>
-          </div>
+          <div class="row justify-content-around">
+    <div class="col-4">
+      (Title)
+    </div>
+    <div class="col-4">
+      $___
+    </div>
+  </div>
+  </div>
         </div>
-      </div>
+      
     </>
   );
 }

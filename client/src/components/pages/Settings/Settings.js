@@ -13,31 +13,31 @@ function Settings() {
     { name: "Dark Mode", value: "2" },
   ];
 
-  const styles = {
-    card: {
-      margin: 20,
-      background: "#e8eaf6",
-    },
-    heading: {
-      background: "#3f51b5",
-      minHeight: 50,
-      lineHeight: 3.5,
-      fontSize: "1.2rem",
-      color: "white",
-      padding: "0 20px",
-    },
-    content: {
-      padding: 20,
-    },
-    button: {
-      background: "#00FF00",
-    },
-  };
+  // const styles = {
+  //   card: {
+  //     margin: 20,
+  //     background: "#e8eaf6",
+  //   },
+  //   heading: {
+  //     background: "#3f51b5",
+  //     minHeight: 50,
+  //     lineHeight: 3.5,
+  //     fontSize: "1.2rem",
+  //     color: "white",
+  //     padding: "0 20px",
+  //   },
+  //   content: {
+  //     padding: 20,
+  //   },
+  //   button: {
+  //     background: "#00FF00",
+  //   },
+  // };
   return (
     <Container>
-      <h1 style={styles.heading}>Settings</h1>
-      <p style={styles.button}>Place Holder User</p>
-      <p>Place Holder Password</p>
+      <div class="container-fluid">
+      <h1 id="settingsHead">Settings</h1>
+  
       <ButtonGroup>
         {radios.map((radio, idx) => (
           <ToggleButton
@@ -54,19 +54,20 @@ function Settings() {
           </ToggleButton>
         ))}
       </ButtonGroup>
+<br></br><br></br><br></br>
       <p>Place Holder Name</p>
-      <div className="mb-2">
-        <Button variant="primary" size="lg">
-          Home
-        </Button>{" "}
-        <Button variant="danger" size="lg">
-          Logout
-        </Button>
-        <div>
-          <a id="buttonInstall" role="button">
-            Install!
-          </a>
-        </div>
+      <br></br>
+      <p>Place Holder User</p>
+      <br></br>
+      <p>Place Holder Password</p>
+      
+      <div>
+        
+          <button id="buttonInstall" role="button">
+            Click To Install!
+          </button>
+        
+      </div>
       </div>
     </Container>
   );

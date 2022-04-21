@@ -48,4 +48,14 @@ return (
       </Router>
   );
 }
+  // const handlePageChange = (page) => setCurrentPage(page);
+
+  // return (
+  //   <div>
+  //     {/* <Home currentPage={currentPage} handlePageChange={handlePageChange} /> */}
+
+  //     {renderPage()}
+  //     <Footer currentPage={SingleSub} handlePageChange={handlePageChange} />
+  //   </div>
+//   );
 

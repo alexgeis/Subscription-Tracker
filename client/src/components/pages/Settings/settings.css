@@ -1,0 +1,14 @@
+#settingsHead {
+    background-color: #D7B377;
+    padding: 20px 20px 20px 20px;
+    font-weight: bolder;
+    border-radius: 5px;
+    text-decoration: underline;
+    margin-bottom: 55px;
+    font-family: 'Kalam', cursive; 
+}
+#buttonInstall {
+    font-size: larger !important;
+    border-radius: 5px;
+    margin-top: 50px;
+}

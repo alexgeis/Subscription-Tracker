@@ -10,15 +10,15 @@ function SignUp() {
     var email = e.target.value
   
     if (validator.isEmail(email)) {
-      setEmailError('Valid Email!')
+      setEmailError('Great!')
     } else {
       setEmailError('Please Enter A Valid Email')
     }
   }
   return (
-    <div className="card">
+    <div className="container-fluid">
     <div className="m-4">
-      <h1>SIGN UP</h1>
+      <h1 id="signUp">SIGN UP</h1>
     <form action="/examples/actions/confirmation.php" method="post">
     <div className="row mb-3">
             <label for="inputUsername" className="col-sm-2 col-form-label">Username</label>
@@ -32,7 +32,7 @@ function SignUp() {
                 <input type="email" className="form-control" id="inputEmail" placeholder="name@exmaple.com" 
                 onChange={(e) => validateEmail(e)}></input> <br />
           <span style={{
-            color: 'red', 
+            color: 'green', 
           }}>{emailError}</span> 
             </div>
         </div>
@@ -43,8 +43,8 @@ function SignUp() {
             </div>
         </div>
         <div className="row">
-            <div className="col-sm-10 offset-sm-2">
-                <button type="submit" className="btn btn-primary">Sign in</button>
+            <div>
+                <button id="signUpBtn" type="submit" className="btn btn-primary">Sign in</button>
             </div>
         </div>
     </form>

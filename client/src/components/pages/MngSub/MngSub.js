@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function MngSub() {
     return (
 
-<div className="card">
+        <div class="container-fluid">
 <h1>Manage My Subscriptions</h1>    
 <div className="card-body">
 <div class="row justify-content-around">
