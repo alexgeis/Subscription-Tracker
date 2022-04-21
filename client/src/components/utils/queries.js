@@ -62,7 +62,12 @@ export const QUERY_SINGLE_USER = gql`
         _id
         subscriptionName
         monthlyCost
+        annualCost
+        paymentType
+        startDate
         dueDate
+        autoPay
+        autoRenew
       }
     }
   }
