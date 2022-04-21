@@ -28,7 +28,6 @@ function Welcome() {
     return (<div> ...Loading </div>)
   }
 
-  console.log({data})
   console.log(data)
 
   return (
