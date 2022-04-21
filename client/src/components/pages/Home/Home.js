@@ -49,7 +49,9 @@ function Home() {
     });
   };
 
-  // const handleSignup = () => {}
+  // const handleSignup = () => {
+  //   render("/signup");
+  // };
 
   return (
     <>
@@ -83,7 +85,7 @@ function Home() {
                 placeholder="Password"
               />
             </Form.Group>
-            <Button  variant="primary" type="submit" onClick={handleSubmit}>
+            <Button variant="primary" type="submit" onClick={handleSubmit}>
               Login
             </Button>
           </div>
@@ -95,7 +97,7 @@ function Home() {
               type="submit"
               // onClick={handleSignup}
             >
-              Sign Up
+              <Link to="/signup">Sign Up</Link>
             </Button>
           </div>
         </Form>
