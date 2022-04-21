@@ -84,12 +84,12 @@ function Home() {
                 placeholder="Password"
               />
             </Form.Group>
-            <Button variant="primary" type="submit" onClick={handleSubmit}>
+            <Button  variant="primary" type="submit" onClick={handleSubmit}>
               Login
             </Button>
           </div>
           <br></br>
-          <p>OR </p>
+          <p>OR</p>
           <div>
             <Button
               variant="primary"

@@ -1,0 +1,14 @@
+#signUp {
+    background-color: #D7B377;
+    padding: 20px 20px 20px 20px;
+    font-weight: bolder;
+    border-radius: 5px;
+    text-decoration: underline;
+    margin-bottom: 25px;
+    font-family: 'Kalam', cursive; 
+    margin-bottom: 50px;
+}
+
+#signUpBtn {
+    margin-top: 25px;
+}

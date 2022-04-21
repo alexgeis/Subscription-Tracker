@@ -1,35 +1,37 @@
 .container-fluid {
-    border: 2px #2C2C34 solid;
     padding-right: 50px;
     padding-left: 50px;
     padding-top: 30px;
     width: 80%;
     height: 800px;
     justify-content: center !important;
-    background-color: white;
+    background-image: url("https://i.pinimg.com/originals/43/bc/59/43bc5943d55fe07f5d5647ae9b3c8547.jpg");
+    background-repeat: no-repeat;
+    /* opacity: 0.5; */
+    background-size: cover;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
     }
 
     #thisMonth {
     border: 2px solid #2C2C34;
-    height: 70%;
+    height: 58%;
     padding: 15px 15px 15px 15px;
     }
     
-    button {
+#addSubBtn {
       /* width: 100px !important; */
-    font-size: small !important;
+    font-size: medium !important;
     margin-bottom: 50px !important ;
-    margin-right: 7px;
+    font-weight: lighter !important;
     }
 
     #welcomeScreen {
-      margin-bottom: 25px;
-      font-weight: bolder;
-      border: 1px black solid;
       background-color: #D7B377;
-      padding: 20px 20px 20px 20px;
-      border-radius: 5px;
-      text-decoration: underline;
-     
+    padding: 20px 20px 20px 20px;
+    font-weight: bolder;
+    border-radius: 5px;
+    text-decoration: underline;
+    margin-bottom: 25px;
+    font-family: 'Kalam', cursive; 
     }

@@ -37,15 +37,23 @@ function Welcome() {
     <>
       <div class="container-fluid">
           <h1 id="welcomeScreen">Welcome (Name Renders Here)</h1>
-          <button className="btn btn-primary" type="button">
-            Manage Subscription
+          <button id="addSubBtn" className="btn btn-primary" type="button">
+            Manage Subscriptions
           </button>
-          <button className="btn btn-primary" type="button">
+          <br></br>
+          <button id="addSubBtn" className="btn btn-primary" type="button">
             Add A Subscription
           </button>
           <div id="thisMonth">
-          
-          </div>
+          <div class="row justify-content-around">
+    <div class="col-4">
+      (Title)
+    </div>
+    <div class="col-4">
+      $___
+    </div>
+  </div>
+  </div>
         </div>
       
     </>
