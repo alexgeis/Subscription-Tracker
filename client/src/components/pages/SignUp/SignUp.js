@@ -1,5 +1,4 @@
 import "../SignUp/signUp.css";
-// import validator from 'validator'
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
@@ -16,12 +15,10 @@ const SignUp = () => {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUserFormData({ ...userFormData, [name]: value });
-  };
-
+  }
   if (error) {
     console.error(JSON.stringify(error.message));
   }
-
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -53,16 +50,6 @@ console.log(userFormData)
     });
   };
 
-  // const [emailError, setEmailError] = useState('')
-  // const validateEmail = (e) => {
-  //   var email = e.target.value
-  
-  //   if (validator.isEmail(email)) {
-  //     setEmailError('Great!')
-  //   } else {
-  //     setEmailError('Please Enter A Valid Email')
-  //   }
-  // }
 
   return (
     <>
@@ -79,11 +66,11 @@ console.log(userFormData)
             type='text'
             placeholder='Your username'
             name='username'
-            onChange={handleInputChange}
+            onChange={handleInputChange} 
             value={userFormData.username}
             required
           />
-          <Form.Control.Feedback type='invalid'>Username is required!</Form.Control.Feedback>
+          <Form.Control.Feedback type='invalid'>Username is required</Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group>
@@ -96,7 +83,7 @@ console.log(userFormData)
             value={userFormData.email}
             required
           />
-          <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
+          <Form.Control.Feedback type='invalid'>Email is required</Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group>
@@ -109,7 +96,7 @@ console.log(userFormData)
             value={userFormData.password}
             required
           />
-          <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
+          <Form.Control.Feedback type='invalid'>Password is required</Form.Control.Feedback>
         </Form.Group>
         <Button id="signUpBtn"
           disabled={!(userFormData.username && userFormData.email && userFormData.password)}
@@ -124,11 +111,3 @@ console.log(userFormData)
 };
 
 export default SignUp;
-
-
-
-
-// {/* onChange={(e) => validateEmail(e)} ></input> <br />
-//           <span style={{
-//             color: 'green', 
-//           }}>{emailError}</span>  */}

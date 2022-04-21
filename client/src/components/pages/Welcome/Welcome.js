@@ -34,11 +34,6 @@ function Welcome() {
   return (
     <>
       <div className="container-fluid">
-        <Link to="/settings">
-          <button id="settingsButton" className="btn btn-primary" type="button">
-            Settings
-          </button>
-        </Link>
         <h1 id="welcomeScreen">Welcome {data.user.username}</h1>
         <Link to="/managesub">
           <button id="addSubBtn" className="btn btn-primary" type="button">
@@ -54,6 +49,11 @@ function Welcome() {
         <div id="thisMonth">
           <SubscriptionList subscriptions={data.user.subscriptions}/>
         </div>
+        <Link to="/settings">
+          <button id="settingsButton" className="btn btn-primary" type="button">
+            Settings
+          </button>
+        </Link>
       </div>
     </>
   );

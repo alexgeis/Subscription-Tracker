@@ -40,7 +40,7 @@ function Footer({ currentPage, handlePageChange }) {
             ) : (
               <>
                 <Link className="btn btn-lg btn-primary m-2" to="/welcome">
-                  Login - footer.js
+                  Login
                 </Link>
                 <Link className="btn btn-lg btn-dark m-2" to="/signup">
                   Signup
