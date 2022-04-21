@@ -7,6 +7,12 @@ const resolvers = {
     users: async () => {
       return await User.find().populate('subscriptions');
     },
+
+    user: async (parent, {userId}) => {
+      console.log(userId)
+      return await User.findOne({_id: userId}).populate('subscriptions');
+    }, 
+
     subscriptions: async () => {
       return await Subscription.find({});
     },
