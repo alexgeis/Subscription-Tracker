@@ -53,3 +53,11 @@ export const QUERY_SINGLE_SUBSCRIPTION = gql`
     }
   }
 `
+
+export const QUERY_SINGLE_USER = gql`
+  query user($userId: ID!){
+    users (userId: $userId){
+      _id
+    }
+  }
+`

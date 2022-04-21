@@ -28,6 +28,7 @@ const typeDefs = gql`
 
   type Query {
     users: [User]
+    user(userId: ID!): User
     subscriptions: [Subscription]
     subscription(subscriptionId: ID!): Subscription
     # matchups(_id: String): [Matchup]
