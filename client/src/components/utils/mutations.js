@@ -14,8 +14,7 @@ export const LOGIN_USER = gql`
 
 export const CREATE_USER = gql`
   mutation createUser($username: String!, $password: String!, $email: String!) {
-    createUser(username: $username, password: $password, 
-    email: $email) {
+    createUser(username: $username, password: $password, email: $email) {
       user {
         _id
         username
@@ -78,8 +77,8 @@ export const UPDATE_USER = gql`
 // `;
 
 export const CREATE_SUBSCRIPTION = gql`
-  mutation CreateSubscription($password: String!, $email: String!) {
-    createSubscription(password: $password, email: $email) {
+  mutation CreateSubscription($userId: ID!, $subscription: String!) {
+    createSubscription(userId: $userId, subscription: $subscription) {
       _id
       subscriptionName
       monthlyCost
