@@ -4,57 +4,68 @@ import { Button }  from "react-bootstrap";
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom"
 import { QUERY_SINGLE_USER } from "../../utils/queries"
-
-
-
-
+import AuthService from "../../utils/auth"
 
 
 function SingleSub() {
+
+    let userId = (AuthService.getProfile().data._id)
+    const params = useParams();
+    const subId = params.id;
+    const { loading, error, data } = useQuery(QUERY_SINGLE_USER, {
+        variables: { userId: userId }
+      })
+    
+      if (loading){
+        return (<div> ...Loading </div>)
+      }
+
+      const subscriptions = data.user.subscriptions
+
+      const subIndex = subscriptions.findIndex((object) => {
+          return object._id === subId
+      })
+
+      const s = subscriptions[subIndex]
+
     return (
     
-<div class="container-fluid">     
-    <h1>Subscription Name</h1>
+<div className="container-fluid">     
+    <h1>{s.subscriptionName}</h1>
         
 
     <div className="container">
-    <h1>Netflix</h1>
+
 
     <div>
-        <p>Next Due Date</p>
-        <p>Date</p>
+        <p>Monthly Cost:</p>
+        <p>${s.monthlyCost}.00</p>
     </div>
     <div>
-        <p>Next Due Date</p>
-        <p>Date</p>
+        <p>Annual Cost:</p>
+        <p>${s.annualCost}.00</p>
     </div>
     <div>
-        <p>Next Due Date</p>
-        <p>Date</p>
+        <p>Payment Type:</p>
+        <p>{s.paymentType}</p>
     </div>
     <div>
-        <p>Next Due Date</p>
-        <p>Date</p>
+        <p>Start Date:</p>
+        <p>{s.startDate}</p>
     </div>
     <div>
-        <p>Next Due Date</p>
-        <p>Date</p>
+        <p>Next Due Date:</p>
+        <p>05/{s.dueDate}/22</p>
     </div>
     <div>
-        <p>Next Due Date</p>
-        <p>Date</p>
+        <p>Auto Pay?</p>
+        <p>{s.autoPay}</p>
     </div>
     <div>
-        <p>Next Due Date</p>
-        <p>Date</p>
+        <p>Auto Renew?</p>
+        <p>{s.autoRenew}</p>
     </div>
 <div>
-<p>Next Due Date</p>
-<p>Date</p>
-
-
-
-
 
     <div className="mb-2">
         <Button variant="primary" size="lg">
