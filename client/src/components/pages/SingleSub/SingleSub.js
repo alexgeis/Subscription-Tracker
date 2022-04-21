@@ -8,6 +8,59 @@ function SingleSub() {
     
         <div class="container-fluid">     
 <h1>Subscription Name</h1>
+        
+
+<div className="container">
+       <h1>Netflix</h1>
+
+<div>
+<p>Next Due Date</p>
+<p>Date</p>
+
+
+</div>
+<div>
+<p>Next Due Date</p>
+<p>Date</p>
+
+
+</div>
+<div>
+<p>Next Due Date</p>
+<p>Date</p>
+
+
+</div>
+<div>
+<p>Next Due Date</p>
+<p>Date</p>
+
+
+</div>
+<div>
+<p>Next Due Date</p>
+<p>Date</p>
+
+
+</div>
+<div>
+<p>Next Due Date</p>
+<p>Date</p>
+
+
+</div>
+<div>
+<p>Next Due Date</p>
+<p>Date</p>
+
+
+</div>
+<div>
+<p>Next Due Date</p>
+<p>Date</p>
+
+
+
 <InputGroup className="mb-3">
     <InputGroup.Text>$</InputGroup.Text>
     <FormControl aria-label="Amount (to the nearest dollar)" />
@@ -33,6 +86,8 @@ function SingleSub() {
             Delete
         </Button>
         </div>
+    </div>
+    </div>
     </div>
 );
 }
