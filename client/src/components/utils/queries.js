@@ -56,13 +56,14 @@ export const QUERY_SINGLE_SUBSCRIPTION = gql`
 
 export const QUERY_SINGLE_USER = gql`
   query user($userId: ID!) {
-    users(userId: $userId){
-    username
-    subscriptions {
-      subscriptionName
-      monthlyCost
-      dueDate
+    user(userId: $userId){
+      username
+      subscriptions {
+        _id
+        subscriptionName
+        monthlyCost
+        dueDate
+      }
     }
-   }
   }
 `

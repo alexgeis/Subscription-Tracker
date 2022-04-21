@@ -6,6 +6,7 @@ import { useQuery } from '@apollo/client'
 import { QUERY_SINGLE_USER } from "../../utils/queries";
 import AuthService from "../../utils/auth";
 import { Link } from "react-router-dom";
+import SubscriptionList from "../../SubscriptionList";
 
 
 function Welcome() {
@@ -28,6 +29,7 @@ function Welcome() {
   }
 
   console.log({data})
+  console.log(data)
 
   return (
     <>
@@ -37,7 +39,7 @@ function Welcome() {
             Settings
           </button>
         </Link>
-        <h1 id="welcomeScreen">Welcome (Name Renders Here)</h1>
+        <h1 id="welcomeScreen">Welcome {data.user.username}</h1>
         <Link to="/managesub">
           <button id="addSubBtn" className="btn btn-primary" type="button">
             Manage Subscriptions
@@ -50,10 +52,7 @@ function Welcome() {
           </button>
         </Link>
         <div id="thisMonth">
-          <div className="row justify-content-around">
-            <div className="col-4">(Title)</div>
-            <div className="col-4">$___</div>
-          </div>
+          <SubscriptionList subscriptions={data.user.subscriptions}/>
         </div>
       </div>
     </>
