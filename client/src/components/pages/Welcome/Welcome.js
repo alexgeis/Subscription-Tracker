@@ -29,6 +29,13 @@ function Welcome() {
   }
 
   console.log(data)
+  let subArray = data.user.subscriptions
+
+  let monthlySum = 0;
+  for (let i = 0; i < subArray.length; i++) {
+    monthlySum = monthlySum + subArray[i].monthlyCost
+  }
+
 
   return (
     <>
@@ -47,6 +54,7 @@ function Welcome() {
         </Link>
         <div id="thisMonth">
           <SubscriptionList subscriptions={data.user.subscriptions}/>
+          <p>Monthly Total: ${monthlySum}.00 </p>
         </div>
         <Link to="/settings">
           <button id="settingsButton" className="btn btn-primary" type="button">
