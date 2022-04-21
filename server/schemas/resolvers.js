@@ -5,7 +5,7 @@ const { signToken } = require("../utils/auth");
 const resolvers = {
   Query: {
     users: async () => {
-      return await User.find().populate('subscriptions');
+      return await User.find().populate("subscriptions");
     },
 
     user: async (parent, {userId}) => {
@@ -25,7 +25,7 @@ const resolvers = {
   Mutation: {
     //LOGIN
     login: async (parent, { username, password }) => {
-      console.log("login resolver function")
+      console.log("login resolver function");
       const user = await User.findOne({ username });
 
       if (!user) {
