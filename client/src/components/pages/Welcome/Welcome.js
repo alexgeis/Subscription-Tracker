@@ -16,11 +16,6 @@ function Welcome() {
   return (
     <>
       <div className="container-fluid">
-        <Link to="/settings">
-          <button id="settingsButton" className="btn btn-primary" type="button">
-            Settings
-          </button>
-        </Link>
         <h1 id="welcomeScreen">Welcome (Name Renders Here)</h1>
         <Link to="/managesub">
           <button id="addSubBtn" className="btn btn-primary" type="button">
@@ -39,6 +34,11 @@ function Welcome() {
             <div className="col-4">$___</div>
           </div>
         </div>
+        <Link to="/settings">
+          <button id="settingsButton" className="btn btn-primary" type="button">
+            Settings
+          </button>
+        </Link>
       </div>
     </>
   );

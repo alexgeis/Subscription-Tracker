@@ -15,7 +15,7 @@
 
     #thisMonth {
     border: 2px solid #2C2C34;
-    height: 58%;
+    height: 53%;
     padding: 15px 15px 15px 15px;
     }
     
@@ -34,4 +34,8 @@
     text-decoration: underline;
     margin-bottom: 25px;
     font-family: 'Kalam', cursive; 
+    }
+
+    #settingsButton {
+      margin-top: 5px;
     }
