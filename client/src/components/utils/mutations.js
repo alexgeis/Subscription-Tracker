@@ -14,22 +14,26 @@ export const LOGIN_USER = gql`
 
 export const CREATE_USER = gql`
   mutation createUser($username: String!, $password: String!, $email: String!) {
-    createUser(username: $username, password: $password, email: $email) {
-      _id
-      username
-      password
-      email
-      subscriptions {
+    createUser(username: $username, password: $password, 
+    email: $email) {
+      user {
         _id
-        subscriptionName
-        monthlyCost
-        annualCost
-        paymentType
-        startDate
-        dueDate
-        autoPay
-        autoRenew
+        username
+        password
+        email
+        subscriptions {
+          _id
+          subscriptionName
+          monthlyCost
+          annualCost
+          paymentType
+          startDate
+          dueDate
+          autoPay
+          autoRenew
+        }
       }
+      token
     }
   }
 `;
