@@ -7,6 +7,10 @@ const resolvers = {
     users: async () => {
       return await User.find().populate('subscriptions');
     },
+
+    user: async () => {
+      return await User.find
+    }, 
     subscriptions: async () => {
       return await Subscription.find({});
     },
