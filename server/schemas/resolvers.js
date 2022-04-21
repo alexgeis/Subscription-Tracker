@@ -9,7 +9,6 @@ const resolvers = {
     },
 
     user: async (parent, {userId}) => {
-      console.log(userId)
       return await User.findOne({_id: userId}).populate('subscriptions');
     }, 
 
