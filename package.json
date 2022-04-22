@@ -41,5 +41,8 @@
     "workbox-routing": "^6.5.3",
     "workbox-strategies": "^6.5.3",
     "workbox-webpack-plugin": "^6.5.3"
-  }
+  },
+  "engines": {
+    "node": "16.x.x"
+    }
 }
