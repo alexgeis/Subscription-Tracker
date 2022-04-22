@@ -1,11 +1,24 @@
 import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+
 function SubscriptionList({ subscriptions }) {
   console.log(subscriptions);
   return (
-    <div className="row justify-content-around">
+    <table class="table table-striped">
+      <thead>
+<tr>
+  <th colspan="2">Subscription Name</th>
+  <th scope="col">Due Date</th>
+  <th scope="col">Monthly Cost</th>
+</tr>
+</thead>
+<tbody/>
+
       {subscriptions.map((subscription) => (
-        <div key={subscription._id}>
-          <div className="col-4">
+        <tbody key={subscription._id}>
+          
+          <td colspan="2">
             <Link
               to={{
                 pathname: "/sub/" + subscription._id,
@@ -18,13 +31,14 @@ function SubscriptionList({ subscriptions }) {
               >
                 {subscription.subscriptionName}
               </button>
-            </Link>
-          </div>
-          <div className="col-4">${subscription.monthlyCost}</div>
-          <div className="col-4">Due on: 4/{subscription.dueDate}</div>
-        </div>
-      ))}
-    </div>
+            </Link> 
+          </td>
+          <td scope="col">4/{subscription.dueDate}</td>
+          <td scope="col">${subscription.monthlyCost}</td>
+          </tbody>
+          
+      ))}<br></br>
+    </table>
   );
 }
 

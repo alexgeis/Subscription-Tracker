@@ -3,7 +3,7 @@
     padding-left: 50px;
     padding-top: 30px;
     width: 80%;
-    height: 800px;
+    height: 850px;
     justify-content: center !important;
     background-image: url("https://i.pinimg.com/originals/43/bc/59/43bc5943d55fe07f5d5647ae9b3c8547.jpg");
     background-repeat: no-repeat;
@@ -38,4 +38,8 @@
 
     #settingsButton {
       margin-top: 5px;
+    }
+
+    td {
+      padding: 5px;
     }
