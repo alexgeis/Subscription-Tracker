@@ -1,17 +1,23 @@
 import '../SingleSub/singleSub.css'
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button }  from "react-bootstrap";
-import { useQuery } from "@apollo/client";
-import { useParams } from "react-router-dom"
+import { useMutation, useQuery } from "@apollo/client";
+import { useParams, useNavigate } from "react-router-dom"
 import { QUERY_SINGLE_USER } from "../../utils/queries"
+import { REMOVE_SUBSCRIPTION } from '../../utils/mutations';
 import AuthService from "../../utils/auth"
 
 
 function SingleSub() {
 
+    
+
+    
     let userId = (AuthService.getProfile().data._id)
     const params = useParams();
     const subId = params.id;
+    const navigate = useNavigate();
+    const [removeSub, {rmData, rmLoading, rmError}] = useMutation(REMOVE_SUBSCRIPTION)
     const { loading, error, data } = useQuery(QUERY_SINGLE_USER, {
         variables: { userId: userId }
       })
@@ -20,6 +26,8 @@ function SingleSub() {
         return (<div> ...Loading </div>)
       }
 
+     
+
       const subscriptions = data.user.subscriptions
 
       const subIndex = subscriptions.findIndex((object) => {
@@ -27,6 +35,19 @@ function SingleSub() {
       })
 
       const s = subscriptions[subIndex]
+      
+      const handleRemove = async (event) => {
+        event.preventDefault()
+            try {
+                removeSub({
+                    variables: {userId: userId, subscription: s._id}
+                })
+            } catch {
+                console.error(JSON.stringify(error));
+            } finally {
+                window.location.assign("/welcome");
+            }
+    }
 
     return (
     
@@ -71,7 +92,7 @@ function SingleSub() {
         <Button variant="primary" size="lg">
             Edit
         </Button>{" "}
-        <Button variant="danger" size="lg">
+        <Button variant="danger" size="lg" onClick={handleRemove}>
             Delete
         </Button>
         </div>
