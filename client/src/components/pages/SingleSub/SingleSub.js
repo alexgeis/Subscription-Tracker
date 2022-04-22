@@ -1,15 +1,8 @@
 import "../SingleSub/singleSub.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import { Button, Modal, Form } from "react-bootstrap";
-
-
-
 import { useState } from "react";
-
 import EditModal from "../../EditComponent";
-
-
 import { useMutation, useQuery } from "@apollo/client";
 import { useParams, useNavigate } from "react-router-dom"
 import { QUERY_SINGLE_USER } from "../../utils/queries"
@@ -17,14 +10,10 @@ import { REMOVE_SUBSCRIPTION } from '../../utils/mutations';
 import AuthService from "../../utils/auth"
 
 
-
 function SingleSub() {
   // set modal display state
 
 
-    
-
-    
     let userId = (AuthService.getProfile().data._id)
     const params = useParams();
     const subId = params.id;
@@ -38,17 +27,7 @@ function SingleSub() {
         return (<div> ...Loading </div>)
       }
 
-     
-
-      const subscriptions = data.user.subscriptions
-
-
-  if (loading) {
-    return <div> ...Loading </div>;
-  }
-
-
-  const subscriptions = data.user.subscriptions;
+    const subscriptions = data.user.subscriptions;
 
      
       
@@ -101,8 +80,7 @@ function SingleSub() {
         <div>
           <p>Auto Pay?</p>
           <p>{s.autoPay ? "Yes" : "No"}</p>
-
-    </div>
+        </div>
     
         <div>
           <p>Auto Renew?</p>
