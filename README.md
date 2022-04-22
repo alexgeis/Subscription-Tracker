@@ -13,6 +13,16 @@ Cache Bandit is an easy to use application where you can input all the details t
 * When a profile has been created and subsriptions have been added, you can click on the settings button to manually edit or delete existing subsciption services you've saved. 
 
 
+![Login Page](./client/src/components/images/LoginPage.png)
+
+![Home Page](./client/src/components/images/HomePage.png)
+
+![Single Sub Page](./client/src/components/images/SingleSubPage.png)
+
+![Add Sub Page](./client/src/components/images/AddNewSub.png)
+
+
+
 
 
 
@@ -24,3 +34,4 @@ Links:
 
 Contributors:
 Tracye Wilhelm, Austin Andrews, Maria Paterno, Alex Geis, and Max Gorodesky. 
+
