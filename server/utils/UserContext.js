@@ -20,7 +20,6 @@ export const UserProvider = ({ children }) => {
       subscription: ["Hulu", "Amazon", "Instacart"],
     },
   ]);
-
   // Creating our state
   const [darkTheme, setDarkTheme] = useState(true);
 
