@@ -62,7 +62,7 @@ function Home() {
           <img src={Logo3} className="img-fluid" id="logo" alt="Logo" />
         </div>
         <Form>
-          <div>
+          <div id="formContainer">
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Username</Form.Label>
               <Form.Control
@@ -94,11 +94,13 @@ function Home() {
             <Button
               variant="primary"
               type="submit"
+              id="singUpBtnMain"
               // onClick={handleSignup}
             >
               <Link to="/signup">Sign Up</Link>
             </Button>
           </div>
+          <div id="formContainer"></div>
         </Form>
       </Container>
     </>

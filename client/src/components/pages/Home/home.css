@@ -4,6 +4,10 @@
     color: black;
 }
 
+#singUpBtnMain {
+    margin-bottom: 100px;
+}
+
 
 #logo {
     max-height: 300px;
