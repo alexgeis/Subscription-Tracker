@@ -10,16 +10,17 @@ const EditModal = ({subscription}) => {
   const [showModal, setShowModal] = useState(false);
   const [subName, setSubName] = useState(subscription.subscriptionName)
   const [monthlyCost, setMonthlyCost] = useState(subscription.monthlyCost)
+  const [annualCost, setAnnualCost] = useState(subscription.annualCost)
   const [payType, setPayType] = useState(subscription.paymentType)
   const [autoPay, setAutoPay] = useState(subscription.autoPay);
   const [autoRenew, setRenew] = useState(subscription.autoRenew);
-  
+  const [updateSubscription, {error}] = useMutation(UPDATE_SUBSCRIPTION);
 
 
   let userId = (AuthService.getProfile().data._id)
   function consoleLogger(event){
     event.preventDefault()
-    console.log(subName, monthlyCost, payType, autoPay, autoRenew)
+    console.log(subName, monthlyCost, annualCost, payType, autoPay, autoRenew)
   }
 
   const handleInputChange = (e) => {
@@ -33,7 +34,8 @@ const EditModal = ({subscription}) => {
         break;
       }
       case 'sCost': {
-        setMonthlyCost(inputValue)
+        setMonthlyCost(parseInt(inputValue))
+        setAnnualCost((parseInt(inputValue))*12)
         break;
       }
       case 'sPayType': {
@@ -63,6 +65,7 @@ const EditModal = ({subscription}) => {
     setAutoPay(subscription.autoPay)
     setRenew(subscription.autoRenew)
     setMonthlyCost(subscription.monthlyCost)
+    setAnnualCost(subscription.annualCost)
     setSubName(subscription.subscriptionName)
     setPayType(subscription.paymentType)
     setShowModal(false)
@@ -71,7 +74,21 @@ const EditModal = ({subscription}) => {
   const handleFormSubmit = async (e) => {
     e.preventDefault()
 
-
+    try {
+      const { data } = await updateSubscription({
+        variables: {
+          id: subscription._id,
+          subscriptionName: subName,
+          monthlyCost: monthlyCost,
+          annualCost: annualCost,
+          paymentType: payType,
+          autoPay: autoPay,
+          autoRenew: autoRenew,
+        }
+      })
+    } catch (error) {
+      console.log(JSON.stringify(error))
+    }
   }
  
   return (
@@ -83,7 +100,7 @@ const EditModal = ({subscription}) => {
       <Modal
         size="lg"
         show={showModal}
-        onHide={() => setShowModal(false)}
+        onHide={handleHide}
         aria-labelledby="signup-modal"
       >
         <Modal.Header closeButton>
@@ -91,7 +108,7 @@ const EditModal = ({subscription}) => {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3">
               <Form.Label>Name:</Form.Label>
               <Form.Control 
                 type="input"
@@ -100,7 +117,7 @@ const EditModal = ({subscription}) => {
                 placeholder={subscription.subscriptionName} 
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3">
               <Form.Label>Cost:</Form.Label>
               <Form.Control 
                 type="input"
@@ -109,7 +126,7 @@ const EditModal = ({subscription}) => {
                 placeholder={subscription.monthlyCost} 
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3">
               <Form.Label>Payment Type:</Form.Label>
               <Form.Control 
                 type="input"
@@ -118,7 +135,7 @@ const EditModal = ({subscription}) => {
                 placeholder={subscription.paymentType} 
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Group className="mb-3">
               <Form.Label>Auto Pay:</Form.Label>
               <Form.Check 
                 type="checkbox"
@@ -126,7 +143,7 @@ const EditModal = ({subscription}) => {
                 onChange = {handleCheckboxChange} 
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Group className="mb-3">
               <Form.Label>Auto Renew:</Form.Label>
               <Form.Check 
                 type="checkbox"
@@ -143,7 +160,7 @@ const EditModal = ({subscription}) => {
           <Button variant="secondary" onClick={handleHide}>
             Cancel
           </Button>
-          <Button variant="primary">Save changes</Button>
+          <Button variant="primary" onClick={handleFormSubmit}>Save changes</Button>
         </Modal.Footer>
       </Modal>
     </div>
