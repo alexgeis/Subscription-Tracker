@@ -30,7 +30,6 @@ function Home() {
     event.preventDefault();
     console.log(formState);
     try {
-      console.log("I'm happening at all");
       console.log({ ...formState });
       console.log(login);
       const { data } = await login({
