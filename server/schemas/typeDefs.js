@@ -19,7 +19,7 @@ const typeDefs = gql`
     annualCost: Int
     paymentType: String
     startDate: String
-    dueDate: Int
+    dueDate: String
     autoPay: Boolean
     autoRenew: Boolean
   }
@@ -48,12 +48,13 @@ const typeDefs = gql`
     removeUser(userId: ID!): User
 
     createSubscription(
+      userId: ID!
       subscriptionName: String!
       monthlyCost: Int
       annualCost: Int
       paymentType: String
       startDate: String
-      dueDate: Int
+      dueDate: String
       autoPay: Boolean
       autoRenew: Boolean
     ): User
@@ -65,7 +66,7 @@ const typeDefs = gql`
       annualCost: Int
       paymentType: String
       startDate: String
-      dueDate: Int
+      dueDate: String
       autoPay: Boolean
       autoRenew: Boolean
     ): Subscription

@@ -7,15 +7,12 @@ import { CREATE_SUBSCRIPTION } from "../../utils/mutations";
 import AuthService from "../../utils/auth";
 
 function NewSub() {
-  //DUMMY VALUE
-  //   const userId = "912398719876123";
-  //   const userId = AuthService.getProfile().data._id;
-
+  const userId = AuthService.getProfile().data._id;
   //state variables
   const [startDate, setStartDate] = useState(new Date());
   const [dueDate, setDueDate] = useState(new Date());
   const [subName, setSubName] = useState("");
-  const [cost, setCost] = useState("");
+  const [cost, setCost] = useState(0);
   const cost12 = cost * 12;
   const costMonth = cost / 12;
   const [paymentMethod, setPaymentMethod] = useState("");
@@ -25,6 +22,9 @@ function NewSub() {
   const [autoPay, setAutoPay] = useState(false);
   const [autoRenew, setRenew] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+
+  let today = new Date(startDate);
+  const due = today.setMonth(today.getMonth() + 1).toLocaleString();
 
   const [createSubscription, { error }] = useMutation(CREATE_SUBSCRIPTION);
 
@@ -36,7 +36,7 @@ function NewSub() {
     if (inputType === "name") {
       setSubName(inputValue);
     } else if (inputType === "currency-field") {
-      setCost(inputValue);
+      setCost(parseInt(inputValue));
     } else if (inputType === "paymentMethod") {
       setPaymentMethod(inputValue);
     } else {
@@ -73,13 +73,13 @@ function NewSub() {
       if (monthlyCost === true) {
         const { data } = await createSubscription({
           variables: {
-            userId: AuthService.getProfile().data._id,
+            userId: userId,
             subscriptionName: subName,
             monthlyCost: cost,
             annualCost: cost12,
             paymentType: paymentMethod,
             startDate: startDate,
-            dueDate: dueDate,
+            dueDate: due,
             autoPay: autoPay,
             autoRenew: autoRenew,
           },
@@ -87,7 +87,7 @@ function NewSub() {
       } else if (monthlyCost === false) {
         const { data } = await createSubscription({
           variables: {
-            userId: AuthService.getProfile().data._id,
+            userId: userId,
             subscriptionName: subName,
             monthlyCost: costMonth,
             annualCost: cost,
@@ -108,7 +108,8 @@ function NewSub() {
       setDescription("");
       window.location.reload();
     } catch (err) {
-      console.error(err);
+      //   console.error(err);
+      console.log(JSON.stringify(err, null, 2));
     }
   };
   return (
@@ -182,11 +183,11 @@ function NewSub() {
         />
         <label htmlFor="currency-field">Enter Amount: </label>
         <input
-          type="text"
+          type="number"
           name="currency-field"
           id="currency-field"
-          pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
-          //   value=""
+          pattern="^\d{1,3}(,\d{3})*(\.\d+)?$"
+          value={cost}
           data-type="currency"
           placeholder="$50.00"
           onChange={handleInputChange}
