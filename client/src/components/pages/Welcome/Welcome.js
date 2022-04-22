@@ -42,12 +42,17 @@ function Welcome() {
  <>
 <div className="container-fluid">
   <h1 id="welcomeScreen">Welcome, {data.user.username}!</h1>
-  <Link to="/managesub">
+  <Link to="/settings">
+    <button id="settingsButton" className="btn btn-primary" type="button">
+      Settings
+    </button>
+  </Link>
+  {/* <Link to="/managesub">
     <button id="addSubBtn" className="btn btn-primary" type="button">
       Manage Subscriptions
     </button>
-  </Link>
-  <br></br>
+  </Link> */}
+  <br></br> <br></br>
   <Link to="newsub">
     <button id="addSubBtn" className="btn btn-primary" type="button">
       Add A Subscription
@@ -56,12 +61,7 @@ function Welcome() {
 
     <SubscriptionList subscriptions={data.user.subscriptions}/>
     <p>Monthly Total: ${monthlySum}.00 </p>
-  
-  <Link to="/settings">
-    <button id="settingsButton" className="btn btn-primary" type="button">
-      Settings
-    </button>
-  </Link>
+
 </div>
 </> 
   );
