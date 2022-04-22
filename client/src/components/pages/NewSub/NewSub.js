@@ -5,6 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useMutation } from "@apollo/client";
 import { CREATE_SUBSCRIPTION } from "../../utils/mutations";
 import AuthService from "../../utils/auth";
+import Footer from "../Footer/Footer";
+import { useNavigate } from "react-router-dom";
 
 function NewSub() {
   const userId = AuthService.getProfile().data._id;
@@ -22,7 +24,7 @@ function NewSub() {
   const [autoPay, setAutoPay] = useState(false);
   const [autoRenew, setRenew] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-
+  const navigate = useNavigate()
   let today = new Date(startDate);
   const due = today.setMonth(today.getMonth() + 1).toLocaleString();
 
@@ -110,9 +112,12 @@ function NewSub() {
     } catch (err) {
       //   console.error(err);
       console.log(JSON.stringify(err, null, 2));
+    } finally {
+      window.location.assign("/welcome");
     }
   };
   return (
+    <>
     <form onSubmit={handleFormSubmit}>
       <div className="container-fluid">
         <h1 id="newSub">Add New Subscription</h1>
@@ -213,6 +218,8 @@ function NewSub() {
         )}
       </div>
     </form>
+    <Footer />
+    </>
   );
 }
 
