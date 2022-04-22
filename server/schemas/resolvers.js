@@ -1,17 +1,19 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Subscription } = require("../models");
 const { signToken } = require("../utils/auth");
+// import { resolvers as scalarResolvers } from "graphql-scalars";
 
 const resolvers = {
+  // ScalarName: ScalarNameResolver,
+
   Query: {
     users: async () => {
-      return await User.find().populate('subscriptions');
+      return await User.find().populate("subscriptions");
     },
 
-    user: async (parent, {userId}) => {
-      console.log(userId)
-      return await User.findOne({_id: userId}).populate('subscriptions');
-    }, 
+    user: async (parent, { userId }) => {
+      return await User.findOne({ _id: userId }).populate("subscriptions");
+    },
 
     subscriptions: async () => {
       return await Subscription.find({});
@@ -25,7 +27,6 @@ const resolvers = {
   Mutation: {
     //LOGIN
     login: async (parent, { username, password }) => {
-      console.log("login resolver function")
       const user = await User.findOne({ username });
 
       if (!user) {
@@ -48,18 +49,44 @@ const resolvers = {
 
       return { token, user };
     },
-    createSubscription: async (parent, { userId, subscription }, context) => {
+    createSubscription: async (
+      parent,
+      {
+        userId,
+        subscriptionName,
+        monthlyCost,
+        annualCost,
+        paymentType,
+        startDate,
+        dueDate,
+        autoPay,
+        autoRenew,
+      },
+      context
+    ) => {
       if (context.user) {
-        return User.findOneAndUpdate(
-          { _id: userId },
+        const newSub = await Subscription.create({
+          subscriptionName,
+          monthlyCost,
+          annualCost,
+          paymentType,
+          startDate,
+          dueDate,
+          autoPay,
+          autoRenew,
+        });
+        return await User.findByIdAndUpdate(
+          userId,
           {
-            $addToSet: { subscriptions: subscription },
+            $addToSet: {
+              subscriptions: newSub._id,
+            },
           },
           {
             new: true,
             runValidators: true,
           }
-        );
+        ).populate("subscriptions");
       }
       throw new AuthenticationError("You need to be logged in!");
     },
@@ -107,14 +134,12 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-    removeSubscription: async (parent, { userId, subscription }) => {
-  
-        return User.findOneAndUpdate(
-          { _id: userId},
-          { $pull: { subscriptions: subscription } },
-          { new: true }
-        );
-
+    removeSubscription: async (parent, { userId, subscription }, context) => {
+      return User.findOneAndUpdate(
+        { _id: userId },
+        { $pull: { subscriptions: subscription } },
+        { new: true }
+      );
     },
   },
 };
