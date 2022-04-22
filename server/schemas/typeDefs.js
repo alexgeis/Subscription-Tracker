@@ -1,4 +1,7 @@
-const { gql } = require("apollo-server-express");
+const { ApolloServer, gql } = require("apollo-server-express");
+const { GraphQLScalarType, Kind } = require("graphql");
+// import { typeDefs as scalarTypeDefs } from "graphql-scalars";
+// code above is to use npm "graphql-scalars" to introduce scalar types that work well with dates: add ...scalarTypeDefs, to the begin of the gql code below
 
 const typeDefs = gql`
   type User {
@@ -44,7 +47,16 @@ const typeDefs = gql`
     ): User
     removeUser(userId: ID!): User
 
-    createSubscription(subscriptionName: String!): User
+    createSubscription(
+      subscriptionName: String!
+      monthlyCost: Int
+      annualCost: Int
+      paymentType: String
+      startDate: String
+      dueDate: Int
+      autoPay: Boolean
+      autoRenew: Boolean
+    ): User
     updateSubscription(
       _id: ID!
       subscriptionName: String
@@ -59,5 +71,9 @@ const typeDefs = gql`
     removeSubscription(userId: ID!, subscription: String!): Subscription
   }
 `;
+
+const dateScalar = new GraphQLScalarType({
+  // See definition above
+});
 
 module.exports = typeDefs;

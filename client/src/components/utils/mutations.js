@@ -77,8 +77,28 @@ export const UPDATE_USER = gql`
 // `;
 
 export const CREATE_SUBSCRIPTION = gql`
-  mutation CreateSubscription($userId: ID!, $subscription: String!) {
-    createSubscription(userId: $userId, subscription: $subscription) {
+  mutation CreateSubscription(
+    $userId: ID!
+    $subscriptionName: String!
+    $monthlyCost: Int
+    $annualCost: Int
+    $paymentType: Int
+    $startDate: Date
+    $dueDate: Date
+    $autoPay: Boolean
+    $autoRenew: Boolean
+  ) {
+    createSubscription(
+      userId: $userId
+      subscriptionName: $subscriptionName
+      monthlyCost: $monthlyCost
+      annualCost: $annualCost
+      paymentType: $paymentType
+      startDate: $startDate
+      dueDate: $dueDate
+      autoPay: $autoPay
+      autoRenew: $autoRenew
+    ) {
       _id
       subscriptionName
       monthlyCost

@@ -1,8 +1,11 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Subscription } = require("../models");
 const { signToken } = require("../utils/auth");
+// import { resolvers as scalarResolvers } from "graphql-scalars";
 
 const resolvers = {
+  // ScalarName: ScalarNameResolver,
+
   Query: {
     users: async () => {
       return await User.find().populate("subscriptions");
@@ -42,12 +45,35 @@ const resolvers = {
 
       return { token, user };
     },
-    createSubscription: async (parent, { userId, subscription }, context) => {
+    createSubscription: async (
+      parent,
+      {
+        userId,
+        subscriptionName,
+        monthlyCost,
+        annualCost,
+        paymentType,
+        startDate,
+        dueDate,
+        autoPay,
+        autoRenew,
+      },
+      context
+    ) => {
       if (context.user) {
         return User.findOneAndUpdate(
           { _id: userId },
           {
-            $addToSet: { subscriptions: subscription },
+            $addToSet: {
+              subscriptions: subscriptionName,
+              monthlyCost,
+              annualCost,
+              paymentType,
+              startDate,
+              dueDate,
+              autoPay,
+              autoRenew,
+            },
           },
           {
             new: true,
