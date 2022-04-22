@@ -8,7 +8,7 @@ import { useParams, useNavigate } from "react-router-dom"
 import { QUERY_SINGLE_USER } from "../../utils/queries"
 import { REMOVE_SUBSCRIPTION } from '../../utils/mutations';
 import AuthService from "../../utils/auth"
-
+import Footer from "../Footer/Footer";
 
 function SingleSub() {
   // set modal display state
@@ -98,6 +98,7 @@ function SingleSub() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

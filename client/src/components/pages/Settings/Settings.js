@@ -3,6 +3,7 @@ import { Container, ButtonGroup, ToggleButton, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Settings/settings.css";
 import React, { useState } from "react";
+import Footer from "../Footer/Footer";
 import { QUERY_SINGLE_USER } from "../../utils/queries";
 import { useQuery } from '@apollo/client'
 import AuthService from "../../utils/auth";
@@ -87,6 +88,7 @@ function Settings() {
         
       </div>
       </div>
+      <Footer />
     </Container>
   );
 }
