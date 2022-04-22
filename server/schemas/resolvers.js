@@ -8,8 +8,14 @@ const resolvers = {
 
   Query: {
     users: async () => {
-      return await User.find().populate("subscriptions");
+      return await User.find().populate('subscriptions');
     },
+
+    user: async (parent, {userId}) => {
+      console.log(userId)
+      return await User.findOne({_id: userId}).populate('subscriptions');
+    }, 
+
     subscriptions: async () => {
       return await Subscription.find({});
     },
@@ -22,7 +28,7 @@ const resolvers = {
   Mutation: {
     //LOGIN
     login: async (parent, { username, password }) => {
-      console.log("login resolver function");
+      console.log("login resolver function")
       const user = await User.findOne({ username });
 
       if (!user) {
@@ -133,15 +139,14 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-    removeSubscription: async (parent, { subscription }) => {
-      if (context.user) {
+    removeSubscription: async (parent, { userId, subscription }) => {
+  
         return User.findOneAndUpdate(
-          { _id: context.user._id },
+          { _id: userId},
           { $pull: { subscriptions: subscription } },
           { new: true }
         );
-      }
-      throw new AuthenticationError("You need to be logged in!");
+
     },
   },
 };

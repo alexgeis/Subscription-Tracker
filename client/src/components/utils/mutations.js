@@ -157,14 +157,6 @@ export const REMOVE_SUBSCRIPTION = gql`
   mutation removeSubscription($userId: ID!, $subscription: String!) {
     removeSubscription(userId: $userId, subscription: $subscription) {
       _id
-      subscriptionName
-      monthlyCost
-      annualCost
-      paymentType
-      startDate
-      dueDate
-      autoPay
-      autoRenew
     }
   }
 `;

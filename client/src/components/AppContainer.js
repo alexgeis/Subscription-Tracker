@@ -27,7 +27,7 @@ return (
                 element={<SignUp />}
               />
               <Route 
-                path="/sub" 
+                path="/sub/:id" 
                 element={<SingleSub />}
               />
                 <Route 

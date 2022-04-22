@@ -1,6 +1,47 @@
-.card {
+/* .card {
     border: 1px black solid;
     width: 350px;
     justify-content: center !important;
     
+    } */
+
+    #mngSubPage {
+        background-color: #D7B377;
+        padding: 20px 20px 20px 20px;
+        font-weight: bolder;
+        border-radius: 5px;
+        text-decoration: underline;
+        margin-bottom: 55px;
+        font-family: 'Kalam', cursive; 
     }
+
+    #mngSubBox {
+        border: 1px black solid !important;
+        height: 75% !important;
+    }
+
+    h5 {
+        text-decoration: underline;
+    }
+
+    li {
+        list-style-type: none;
+        float: left;
+    }
+
+    #totalCost {
+        margin-top: 30px;
+    }
+
+#allSubList {
+border-right: 1px black;
+    }
+
+#mngSubBtn {
+    background-color: #59C9A5!important;
+    color: black !important;
+}
+
+#mngSubBtn:hover {
+    background-color: #427AA1 !important;
+}
