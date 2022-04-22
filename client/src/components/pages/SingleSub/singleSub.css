@@ -1,0 +1,16 @@
+#singleSubHead {
+    background-color: #D7B377;
+    padding: 20px 20px 20px 20px;
+    font-weight: bolder;
+    border-radius: 5px;
+    text-decoration: underline;
+    margin-bottom: 25px;
+    font-family: 'Kalam', cursive; 
+}
+
+h4 {
+    text-decoration: underline;
+    padding-top: 20px;
+    color: #2C2C34;
+    font-weight: bold;
+}
