@@ -1,7 +1,5 @@
 * {
     font-family: 'Hind Madurai', sans-serif;
-    /* font-family: 'Dosis', sans-serif; */
-    /* font-family: 'Kalam', cursive; */
     font-weight: bold;
     color: black;
 }
@@ -18,27 +16,10 @@
     height: 175px;
 }
 
-/* #homeContainer {
-    border: 2px #2C2C34 solid;
-    border-radius: 25px;
-    background: rgb(215, 179, 119);
-    background: radial-gradient(circle, rgba(215, 179, 119, 0.7791491596638656) 27%, rgba(89, 201, 165, 0.742734593837535) 100%);
-    padding: 20px 20px 20px 20px;
-    margin-left: 70px;
-    margin-right: 70px;
-    margin-bottom: 50px;
-    font-family: 'Kalam', cursive;
-    font-size: larger;
-    font-weight: bold;
-    color: black;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
-} */
-
 Button {
     background-color: #885A5A !important;
     border: 2px #885A5A !important;
     color: white !important;
-    /* margin-bottom: px; */
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; 
 }
 
