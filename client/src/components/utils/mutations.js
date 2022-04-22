@@ -100,14 +100,19 @@ export const CREATE_SUBSCRIPTION = gql`
       autoRenew: $autoRenew
     ) {
       _id
-      subscriptionName
-      monthlyCost
-      annualCost
-      paymentType
-      startDate
-      dueDate
-      autoPay
-      autoRenew
+      username
+      password
+      email
+      subscriptions {
+        subscriptionName
+        monthlyCost
+        annualCost
+        paymentType
+        startDate
+        dueDate
+        autoPay
+        autoRenew
+      }
     }
   }
 `;

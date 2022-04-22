@@ -57,6 +57,7 @@ const typeDefs = gql`
       autoPay: Boolean
       autoRenew: Boolean
     ): User
+
     updateSubscription(
       _id: ID!
       subscriptionName: String
@@ -72,8 +73,8 @@ const typeDefs = gql`
   }
 `;
 
-const dateScalar = new GraphQLScalarType({
-  // See definition above
-});
+// const dateScalar = new GraphQLScalarType({
+//   // See definition above
+// });
 
 module.exports = typeDefs;

@@ -61,25 +61,31 @@ const resolvers = {
       context
     ) => {
       if (context.user) {
-        return User.findOneAndUpdate(
-          { _id: userId },
+        const newSub = await Subcription.create({
+          subscriptionName,
+          monthlyCost,
+          annualCost,
+          paymentType,
+          startDate,
+          dueDate,
+          autoPay,
+          autoRenew,
+        });
+        return await User.findByIdAndUpdate(
+          userId,
           {
             $addToSet: {
-              subscriptions: subscriptionName,
-              monthlyCost,
-              annualCost,
-              paymentType,
-              startDate,
-              dueDate,
-              autoPay,
-              autoRenew,
+              subscriptions: newSub._id,
             },
           },
           {
             new: true,
             runValidators: true,
           }
-        );
+        ).populate("subscriptions");
+        // const token = signToken(context.user);
+
+        // return { token, newSub };
       }
       throw new AuthenticationError("You need to be logged in!");
     },

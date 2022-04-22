@@ -115,7 +115,7 @@ function NewSub() {
     <form onSubmit={handleFormSubmit}>
       <div className="container-fluid">
         <h1 id="newSub">Add New Subscription</h1>
-        <label for="name">Subscription Name: </label>
+        <label htmlFor="name">Subscription Name: </label>
         <input type="text" id="name" name="name" onChange={handleInputChange} />
         <br></br>
         <br></br>
@@ -139,7 +139,7 @@ function NewSub() {
           onChange={handleCheckboxChange}
           //   onChange={(e) => setAnnualCost(!annualCost)}
         />
-        <label for="monthlyP"> Monthly</label>
+        <label htmlFor="monthlyP"> Monthly</label>
         <br></br>
         <input
           type="checkbox"
@@ -151,7 +151,7 @@ function NewSub() {
           onChange={handleCheckboxChange}
           //   onChange={(e) => setMonthlyCost(!monthlyCost)}
         />
-        <label for="annualP"> Annual</label>
+        <label htmlFor="annualP"> Annual</label>
         <br></br>
         <input
           type="checkbox"
@@ -161,7 +161,7 @@ function NewSub() {
           checked={autoPay}
           onChange={handleCheckboxChange}
         />
-        <label for="autoPay"> Autopay</label>
+        <label htmlFor="autoPay"> Autopay</label>
         <br></br>
         <input
           type="checkbox"
@@ -171,16 +171,16 @@ function NewSub() {
           checked={autoRenew}
           onChange={handleCheckboxChange}
         />
-        <label for="autoRenew"> Autorenew</label>
+        <label htmlFor="autoRenew"> Autorenew</label>
         <br></br>
-        <label for="paymentMethod">Payment Method: </label>
+        <label htmlFor="paymentMethod">Payment Method: </label>
         <input
           type="text"
           id="paymentMethod"
           name="paymentMethod"
           onChange={handleInputChange}
         />
-        <label for="currency-field">Enter Amount: </label>
+        <label htmlFor="currency-field">Enter Amount: </label>
         <input
           type="text"
           name="currency-field"
