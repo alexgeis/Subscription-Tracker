@@ -5,9 +5,10 @@ const EditModal = (s) => {
   const [showModal, setShowModal] = useState(false);
   return (
     <div>
-      <Button variant="primary" size="lg" onClick={() => setShowModal(true)}>
+      <Button variant="primary" size="md" onClick={() => setShowModal(true)}>
         Edit
       </Button>
+      
       <Modal
         size="lg"
         show={showModal}

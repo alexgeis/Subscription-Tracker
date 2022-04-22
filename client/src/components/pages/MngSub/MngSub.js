@@ -52,7 +52,7 @@ function MngSub() {
   return (
     <div class="container-fluid">
       <h1 id="mngSubPage">Manage My Subscriptions</h1>
-      <table class="table table-striped">
+      {/* <table class="table table-striped">
         <thead>
           <tr>
             <th scope="col">A/M</th>
@@ -83,7 +83,7 @@ function MngSub() {
             <td>$</td>
           </tr>
         </tbody>
-      </table>
+      </table> */}
       <h5 id="totalCost">Total Monthly Cost = </h5>
       <h5 id="totalCost">Total Annual Cost = </h5>
     </div>

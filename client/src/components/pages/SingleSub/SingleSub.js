@@ -53,19 +53,19 @@ function SingleSub() {
 
   return (
     <div className="container-fluid">
-      <h1>{s.subscriptionName}</h1>
+      <h1 id="singleSubHead" >{s.subscriptionName}</h1>
 
       <div className="container">
         <div>
-          <p>Monthly Cost:</p>
+          <h4>Monthly Cost:</h4>
           <p>${s.monthlyCost}.00</p>
         </div>
         <div>
-          <p>Annual Cost:</p>
+          <h4>Annual Cost:</h4>
           <p>${s.annualCost}.00</p>
         </div>
         <div>
-          <p>Payment Type:</p>
+          <h4>Payment Type:</h4>
           <p>{s.paymentType}</p>
         </div>
         {/* <div>
@@ -78,18 +78,21 @@ function SingleSub() {
 
     </div> */}
         <div>
-          <p>Auto Pay?</p>
+          <h4>Auto Pay?</h4>
           <p>{s.autoPay ? "Yes" : "No"}</p>
         </div>
     
         <div>
-          <p>Auto Renew?</p>
+          <h4>Auto Renew?</h4>
           <p>{s.autoRenew ? "Yes" : "No"}</p>
         </div>
         <div>
+        <br></br>
+        <br></br>
           <div className="mb-2">
             <EditModal subscription={s} />{" "}
-             <Button variant="danger" size="lg" onClick={handleRemove}>
+            <br></br>
+            <Button variant="danger" size="md" onClick={handleRemove}>
               Delete
             </Button>
           </div>
