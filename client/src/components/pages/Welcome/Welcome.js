@@ -48,7 +48,7 @@ function Welcome() {
           </button>
         </Link>
         <br></br>
-        <Link to="newsub">
+        <Link to="/newsub">
           <button id="addSubBtn" className="btn btn-primary" type="button">
             Add A Subscription
           </button>
