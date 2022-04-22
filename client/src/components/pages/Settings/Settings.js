@@ -3,6 +3,7 @@ import { Container, ButtonGroup, ToggleButton, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Settings/settings.css";
 import React, { useState } from "react";
+import Footer from "../Footer/Footer";
 
 function Settings() {
   const [checked, setChecked] = useState(false);
@@ -49,6 +50,7 @@ function Settings() {
         
       </div>
       </div>
+      <Footer />
     </Container>
   );
 }
