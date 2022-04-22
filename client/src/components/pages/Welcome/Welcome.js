@@ -7,6 +7,7 @@ import { QUERY_SINGLE_USER } from "../../utils/queries";
 import AuthService from "../../utils/auth";
 import { Link } from "react-router-dom";
 import SubscriptionList from "../../SubscriptionList";
+import Footer from "../Footer/Footer";
 
 
 function Welcome() {
@@ -62,6 +63,7 @@ function Welcome() {
           </button>
         </Link>
       </div>
+      <Footer />
     </>
   );
 }
