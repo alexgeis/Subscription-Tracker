@@ -2,10 +2,9 @@ const { AuthenticationError } = require("apollo-server-express");
 const { User, Subscription } = require("../models");
 const { signToken } = require("../utils/auth");
 // import { resolvers as scalarResolvers } from "graphql-scalars";
+// ScalarName: ScalarNameResolver,
 
 const resolvers = {
-  // ScalarName: ScalarNameResolver,
-
   Query: {
     users: async () => {
       return await User.find().populate("subscriptions");
