@@ -15,7 +15,7 @@ const subscriptionModel = new Schema({
     type: Number,
     min: 1, 
     max: 31
-   },
+  },
   autoPay: { type: Boolean, default: false },
   autoRenew: { type: Boolean, default: false },
 });

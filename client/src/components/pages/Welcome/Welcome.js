@@ -38,31 +38,32 @@ function Welcome() {
 
 
   return (
-    <>
-      <div className="container-fluid">
-        <h1 id="welcomeScreen">Welcome {data.user.username}</h1>
-        <Link to="/managesub">
-          <button id="addSubBtn" className="btn btn-primary" type="button">
-            Manage Subscriptions
-          </button>
-        </Link>
-        <br></br>
-        <Link to="newsub">
-          <button id="addSubBtn" className="btn btn-primary" type="button">
-            Add A Subscription
-          </button>
-        </Link>
-        <div id="thisMonth">
-          <SubscriptionList subscriptions={data.user.subscriptions}/>
-          <p>Monthly Total: ${monthlySum}.00 </p>
-        </div>
-        <Link to="/settings">
-          <button id="settingsButton" className="btn btn-primary" type="button">
-            Settings
-          </button>
-        </Link>
-      </div>
-    </>
+
+ <>
+<div className="container-fluid">
+  <h1 id="welcomeScreen">Welcome, {data.user.username}!</h1>
+  <Link to="/managesub">
+    <button id="addSubBtn" className="btn btn-primary" type="button">
+      Manage Subscriptions
+    </button>
+  </Link>
+  <br></br>
+  <Link to="newsub">
+    <button id="addSubBtn" className="btn btn-primary" type="button">
+      Add A Subscription
+    </button>
+  </Link>
+
+    <SubscriptionList subscriptions={data.user.subscriptions}/>
+    <p>Monthly Total: ${monthlySum}.00 </p>
+  
+  <Link to="/settings">
+    <button id="settingsButton" className="btn btn-primary" type="button">
+      Settings
+    </button>
+  </Link>
+</div>
+</> 
   );
 }
 
