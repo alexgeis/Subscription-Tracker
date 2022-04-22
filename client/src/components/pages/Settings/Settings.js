@@ -3,13 +3,23 @@ import { Container, ButtonGroup, ToggleButton, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Settings/settings.css";
 import React, { useState } from "react";
+<<<<<<< HEAD
 import Footer from "../Footer/Footer";
+=======
+
+>>>>>>> ebf65d48b1227fa0287ce30ef04ef10484b27f9a
 import { QUERY_SINGLE_USER } from "../../utils/queries";
 import { useQuery } from '@apollo/client'
 import AuthService from "../../utils/auth";
 import { QUERY_USER } from "../../utils/queries";
 import { useTheme } from '../../utils/ThemeContext';
 
+<<<<<<< HEAD
+=======
+
+import Footer from "../Footer/Footer";
+
+>>>>>>> ebf65d48b1227fa0287ce30ef04ef10484b27f9a
 
 function Settings() {
 
