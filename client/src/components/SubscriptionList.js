@@ -33,7 +33,7 @@ function SubscriptionList({ subscriptions }) {
               </button>
             </Link> 
           </td>
-          <td scope="col">4/{subscription.dueDate}</td>
+          <td scope="col">{Date(subscription.dueDate).toLocaleString()}</td>
           <td scope="col">${subscription.monthlyCost}</td>
           </tbody>
           

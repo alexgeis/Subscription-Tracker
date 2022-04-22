@@ -37,7 +37,7 @@ console.log(userFormData)
 
     
       console.log(data);
-      AuthService.login(data.createUser.token);
+      AuthService.newUser(data.createUser.token);
     } catch (error) {
       console.error(error);
       setShowAlert(true);
