@@ -35,7 +35,7 @@ function SubscriptionList({ subscriptions }) {
             </Link> 
           </td>
           <td scope="col">{DateTime.fromISO(subscription.dueDate).toLocaleString()}</td>
-          <td scope="col">${subscription.monthlyCost}</td>
+          <td scope="col">${(Math.round((subscription.monthlyCost)*100)/100)}</td>
           </tbody>
           
       ))}<br></br>

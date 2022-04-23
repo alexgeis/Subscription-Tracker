@@ -120,7 +120,7 @@ const EditModal = ({subscription}) => {
               />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>Cost:</Form.Label>
+              <Form.Label>Monthly Cost:</Form.Label>
               <Form.Control 
                 type="input"
                 id="sCost"
