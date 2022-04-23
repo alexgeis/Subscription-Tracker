@@ -1,3 +1,4 @@
+import {DateTime} from "luxon";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -33,7 +34,7 @@ function SubscriptionList({ subscriptions }) {
               </button>
             </Link> 
           </td>
-          <td scope="col">{Date(subscription.dueDate).toLocaleString()}</td>
+          <td scope="col">{DateTime.fromISO(subscription.dueDate).toLocaleString()}</td>
           <td scope="col">${subscription.monthlyCost}</td>
           </tbody>
           
