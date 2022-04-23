@@ -65,8 +65,8 @@ const typeDefs = gql`
       monthlyCost: Int
       annualCost: Int
       paymentType: String
-      startDate: String
-      dueDate: String
+      # startDate: String
+      # dueDate: String
       autoPay: Boolean
       autoRenew: Boolean
     ): Subscription

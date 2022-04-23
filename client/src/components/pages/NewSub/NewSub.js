@@ -81,7 +81,7 @@ function NewSub() {
             annualCost: cost12,
             paymentType: paymentMethod,
             startDate: startDate,
-            dueDate: due,
+            dueDate: dueDate,
             autoPay: autoPay,
             autoRenew: autoRenew,
           },

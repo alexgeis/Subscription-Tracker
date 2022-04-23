@@ -10,22 +10,13 @@ import { useTheme } from '../../utils/ThemeContext';
 import Footer from "../Footer/Footer";
 
 
-
 function Settings() {
 
-
-  const [checked, setChecked] = useState(false);
-  const [radioValue, setRadioValue] = useState("1");
+const [checked, setChecked] = useState(false);
+const [radioValue, setRadioValue] = useState("1");
 
 let userId = (AuthService.getProfile().data)
 console.log(userId)
-
-  const radios = [
-    { name: "Light Mode", value: "1" },
-    { name: "Dark Mode", value: "2" },
-  ];
-
-
 
   return (
     <Container>
@@ -36,14 +27,9 @@ console.log(userId)
       <p>{userId.username}</p>
 
       <button id="editBtn">Edit</button>
-
-  
       <h5>Email:</h5>
       <p>{userId.email}</p>
-
       <button id="editBtn">Edit</button>
-
-      
       <h5>Password:</h5>
       <p>Password****{userId.password}</p>
 
@@ -52,8 +38,7 @@ console.log(userId)
           <button id="buttonInstall" role="button">
             Click To Install!
           </button>
-        
-      </div>
+        </div>
       </div>
       <Footer />
     </Container>

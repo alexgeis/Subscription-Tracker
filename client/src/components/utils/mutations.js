@@ -124,8 +124,6 @@ export const UPDATE_SUBSCRIPTION = gql`
     $monthlyCost: Int
     $annualCost: Int
     $paymentType: String
-    $startDate: String
-    $dueDate: String
     $autoPay: Boolean
     $autoRenew: Boolean
   ) {
@@ -135,8 +133,6 @@ export const UPDATE_SUBSCRIPTION = gql`
       monthlyCost: $monthlyCost
       annualCost: $annualCost
       paymentType: $paymentType
-      startDate: $startDate
-      dueDate: $dueDate
       autoPay: $autoPay
       autoRenew: $autoRenew
     ) {
