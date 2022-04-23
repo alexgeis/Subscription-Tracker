@@ -55,7 +55,7 @@ function Welcome(props) {
         </Link>
         <div id="thisMonth">
           <SubscriptionList subscriptions={data.user.subscriptions} />
-          <p>Monthly Total: ${monthlySum}.00 </p>
+          <p>Total: ${(Math.round((monthlySum)*100)/100)}</p>
         </div>
       </div>
       <Footer toggleTheme={toggleTheme} />
