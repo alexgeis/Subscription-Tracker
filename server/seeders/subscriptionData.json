@@ -6,7 +6,7 @@
       "annualCost": 48,
       "paymentType": "VISA",
       "startDate": "2020-10-26",
-      "dueDate": "26",
+      "dueDate": "2022-04-23T06:00:00.000Z",
       "autoPay": true,
       "autoRenew": false
     },
@@ -17,7 +17,7 @@
       "annualCost": 60,
       "paymentType": "MASTERCARD",
       "startDate": "2020-12-26",
-      "dueDate": "26",
+      "dueDate": "2022-04-23T06:00:00.000Z",
       "autoPay": false,
       "autoRenew": false
     },
@@ -28,7 +28,7 @@
       "annualCost": 72,
       "paymentType": "VISA",
       "startDate": "2020-10-26",
-      "dueDate": "26",
+      "dueDate": "2022-04-23T06:00:00.000Z",
       "autoPay": true,
       "autoRenew": false
     },
@@ -39,7 +39,7 @@
       "annualCost": 36,
       "paymentType": "VISA",
       "startDate": "2019-6-26",
-      "dueDate": "26",
+      "dueDate": "2022-04-23T06:00:00.000Z",
       "autoPay": true,
       "autoRenew": false
     },
@@ -50,7 +50,7 @@
       "annualCost": 48,
       "paymentType": "VISA",
       "startDate": "2020-7-13",
-      "dueDate": "13",
+      "dueDate": "2022-04-23T06:00:00.000Z",
       "autoPay": false,
       "autoRenew": true
     },
@@ -61,7 +61,7 @@
       "annualCost": 72,
       "paymentType": "VISA",
       "startDate": "2020-10-26",
-      "dueDate": "26",
+      "dueDate": "2022-04-23T06:00:00.000Z",
       "autoPay": true,
       "autoRenew": false
     },
@@ -72,7 +72,7 @@
       "annualCost": 84,
       "paymentType": "MASTERCARD",
       "startDate": "2019-08-10",
-      "dueDate": "10",
+      "dueDate": "2022-04-23T06:00:00.000Z",
       "autoPay": true,
       "autoRenew": false
     },
@@ -83,7 +83,7 @@
       "annualCost": 60,
       "paymentType": "MASTERCARD",
       "startDate": "2020-1-26",
-      "dueDate": "26",
+      "dueDate": "2022-04-23T06:00:00.000Z",
       "autoPay": true,
       "autoRenew": false
     },
@@ -94,7 +94,7 @@
       "annualCost": 108,
       "paymentType": "VISA",
       "startDate": "2020-10-26",
-      "dueDate": "26",
+      "dueDate": "2022-04-23T06:00:00.000Z",
       "autoPay": true,
       "autoRenew": false
     }

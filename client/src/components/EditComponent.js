@@ -88,6 +88,8 @@ const EditModal = ({subscription}) => {
       })
     } catch (error) {
       console.log(JSON.stringify(error))
+    } finally {
+      handleHide()
     }
   }
  
@@ -137,17 +139,21 @@ const EditModal = ({subscription}) => {
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Auto Pay:</Form.Label>
-              <Form.Check 
+              <Form.Check
+                inline 
                 type="checkbox"
                 id="sAutoPay"
+                defaultChecked={subscription.autoPay}
                 onChange = {handleCheckboxChange} 
               />
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Auto Renew:</Form.Label>
-              <Form.Check 
+              <Form.Check
+                inline 
                 type="checkbox"
                 id="sAutoRenew"
+                defaultChecked={subscription.autoRenew}
                 onChange = {handleCheckboxChange}  
               />
             </Form.Group>
