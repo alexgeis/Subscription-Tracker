@@ -28,8 +28,6 @@ function SingleSub(props) {
       }
 
     const subscriptions = data.user.subscriptions;
-
-     
       
       const handleRemove = async (event) => {
         event.preventDefault()

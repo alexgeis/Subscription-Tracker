@@ -11,7 +11,7 @@ import Footer from "../Footer/Footer";
 
 
 function Settings(props) {
-
+const { toggleTheme } = props;
 let userId = (AuthService.getProfile().data)
 console.log(userId)
 
