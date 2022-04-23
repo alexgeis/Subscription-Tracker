@@ -1,3 +1,4 @@
+import {DateTime} from "luxon";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -5,10 +6,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function SubscriptionList({ subscriptions }) {
   console.log(subscriptions);
   return (
-    <table class="table table-striped">
+    <table className="table table-striped">
       <thead>
 <tr>
-  <th colspan="2">Subscription Name</th>
+  <th colSpan="2">Subscription Name</th>
   <th scope="col">Due Date</th>
   <th scope="col">Monthly Cost</th>
 </tr>
@@ -18,7 +19,7 @@ function SubscriptionList({ subscriptions }) {
       {subscriptions.map((subscription) => (
         <tbody key={subscription._id}>
           
-          <td colspan="2">
+          <td colSpan="2">
             <Link
               to={{
                 pathname: "/sub/" + subscription._id,
@@ -33,7 +34,7 @@ function SubscriptionList({ subscriptions }) {
               </button>
             </Link> 
           </td>
-          <td scope="col">4/{subscription.dueDate}</td>
+          <td scope="col">{DateTime.fromISO(subscription.dueDate).toLocaleString()}</td>
           <td scope="col">${subscription.monthlyCost}</td>
           </tbody>
           

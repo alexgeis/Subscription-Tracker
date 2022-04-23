@@ -105,8 +105,6 @@ const resolvers = {
         monthlyCost,
         annualCost,
         paymentType,
-        startDate,
-        dueDate,
         autoPay,
         autoRenew,
       }
@@ -118,8 +116,6 @@ const resolvers = {
           monthlyCost,
           annualCost,
           paymentType,
-          startDate,
-          dueDate,
           autoPay,
           autoRenew,
         },
