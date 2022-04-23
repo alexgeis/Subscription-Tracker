@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AuthService from "../../utils/auth";
 import { Link } from "react-router-dom";
 
-function Footer({ currentPage, handlePageChange }) {
+function Footer({ currentPage, handlePageChange, toggleTheme }) {
   const logout = (event) => {
     event.preventDefault();
     AuthService.logout();
@@ -12,13 +12,11 @@ function Footer({ currentPage, handlePageChange }) {
     <div className="btn-group">
       <ul className="footerButtons">
         <li className="footer-items">
-            <Link to="/welcome">
-              <button
-                type="button"
-                className="btn btn-secondary btn-sm">
-                Home
-              </button>
-            </Link>
+          <Link to="/welcome">
+            <button type="button" className="btn btn-secondary btn-sm">
+              Home
+            </button>
+          </Link>
         </li>
         <li className="footer-items">
           <div>
@@ -42,6 +40,17 @@ function Footer({ currentPage, handlePageChange }) {
               </>
             )}
           </div>
+        </li>
+        <li className="footer-items">
+          {" "}
+          <button
+            type="button"
+            className="btn btn-secondary btn-sm"
+            id="toggleTheme"
+            onClick={toggleTheme}
+          >
+            Toggle theme
+          </button>
         </li>
       </ul>
     </div>

@@ -10,11 +10,7 @@ import { useTheme } from '../../utils/ThemeContext';
 import Footer from "../Footer/Footer";
 
 
-
 function Settings() {
-
-  const [checked, setChecked] = useState(false);
-  const [radioValue, setRadioValue] = useState("1");
 
 let userId = (AuthService.getProfile().data)
 console.log(userId)
@@ -22,7 +18,7 @@ console.log(userId)
   return (
     <Container>
       <div class="container-fluid">
-        <h1 id="settingsHead">Settings</h1>
+      <h1 id="settingsHead">Settings</h1>
 
 <h5>Username:</h5>
       <p>{userId.username}</p>
