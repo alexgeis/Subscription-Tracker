@@ -10,8 +10,8 @@ import { useTheme } from '../../utils/ThemeContext';
 import Footer from "../Footer/Footer";
 
 
-function Settings() {
-
+function Settings(props) {
+const { toggleTheme } = props;
 let userId = (AuthService.getProfile().data)
 console.log(userId)
 
@@ -35,7 +35,7 @@ console.log(userId)
           </button>
         </div>
       </div>
-      <Footer />
+      <Footer toggleTheme={toggleTheme} />
     </Container>
   );
 }
