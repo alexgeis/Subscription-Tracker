@@ -59,7 +59,7 @@ function SingleSub(props) {
       <div className="container">
         <div>
           <h4>Monthly Cost:</h4>
-          <p>${s.monthlyCost}.00</p>
+          <p>${(Math.round((s.monthlyCost)*100)/100)}</p>
         </div>
         <div>
           <h4>Annual Cost:</h4>
