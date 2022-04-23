@@ -24,7 +24,7 @@ function NewSub() {
   const [autoPay, setAutoPay] = useState(false);
   const [autoRenew, setRenew] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   let today = new Date(startDate);
   const due = today.setMonth(today.getMonth() + 1).toLocaleString();
 
@@ -66,7 +66,9 @@ function NewSub() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
+    console.log("cost", cost);
+    console.log("cost12", cost12);
+    console.log("costMonth", costMonth);
     if (!subName || !cost) {
       setErrorMessage("New subscription requires name and cost.");
       return;
@@ -118,107 +120,116 @@ function NewSub() {
   };
   return (
     <>
-    <form onSubmit={handleFormSubmit}>
-      <div className="container-fluid">
-        <h1 id="newSub">Add New Subscription</h1>
-        <label htmlFor="name">Subscription Name: </label>
-        <input type="text" id="name" name="name" onChange={handleInputChange} />
-        <br></br>
-        <br></br>
-        <p>Start Date</p>
-        <DatePicker
-          onChange={setStartDate}
-          value={startDate}
-          id="datePickerStart"
-        />
-        <p>Due Date</p>
-        <DatePicker onChange={setDueDate} value={dueDate} id="datePickerDue" />
-        <br></br>
-        <br></br> <h2>Billing</h2>
-        <input
-          type="checkbox"
-          id="monthlyP"
-          name="monthlyP"
-          value="monthlyP"
-          checked={monthlyCost}
-          data-group="costGroup"
-          onChange={handleCheckboxChange}
-          //   onChange={(e) => setAnnualCost(!annualCost)}
-        />
-        <label htmlFor="monthlyP"> Monthly</label>
-        <br></br>
-        <input
-          type="checkbox"
-          id="annualP"
-          name="annualP"
-          value="annualP"
-          checked={annualCost}
-          data-group="costGroup"
-          onChange={handleCheckboxChange}
-          //   onChange={(e) => setMonthlyCost(!monthlyCost)}
-        />
-        <label htmlFor="annualP"> Annual</label>
-        <br></br>
-        <input
-          type="checkbox"
-          id="autoPay"
-          name="autoPay"
-          value="autoPay"
-          checked={autoPay}
-          onChange={handleCheckboxChange}
-        />
-        <label htmlFor="autoPay"> Autopay</label>
-        <br></br>
-        <input
-          type="checkbox"
-          id="autoRenew"
-          name="autoRenew"
-          value="autoRenew"
-          checked={autoRenew}
-          onChange={handleCheckboxChange}
-        />
-        <label htmlFor="autoRenew"> Autorenew</label>
-        <br></br>
-        <label htmlFor="paymentMethod">Payment Method: </label>
-        <input
-          type="text"
-          id="paymentMethod"
-          name="paymentMethod"
-          onChange={handleInputChange}
-        />
-        <label htmlFor="currency-field">Enter Amount: </label>
-        <input
-          type="number"
-          name="currency-field"
-          id="currency-field"
-          pattern="^\d{1,3}(,\d{3})*(\.\d+)?$"
-          value={cost}
-          data-type="currency"
-          placeholder="$50.00"
-          onChange={handleInputChange}
-        />
-        <br></br>
-        <input
-          type="text"
-          id="subDesc"
-          name="subDesc"
-          placeholder="Optional Description"
-          onChange={handleInputChange}
-          value={description}
-        />
-        <br></br>
-        <br></br>
-        <button id="newSubBtn" type="submit">
-          Save
-        </button>
-        {errorMessage && (
-          <div>
-            <p className="error-text">{errorMessage}</p>
-          </div>
-        )}
-      </div>
-    </form>
-    <Footer />
+      <form onSubmit={handleFormSubmit}>
+        <div className="container-fluid">
+          <h1 id="newSub">Add New Subscription</h1>
+          <label htmlFor="name">Subscription Name: </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            onChange={handleInputChange}
+          />
+          <br></br>
+          <br></br>
+          <p>Start Date</p>
+          <DatePicker
+            onChange={setStartDate}
+            value={startDate}
+            id="datePickerStart"
+          />
+          <p>Due Date</p>
+          <DatePicker
+            onChange={setDueDate}
+            value={dueDate}
+            id="datePickerDue"
+          />
+          <br></br>
+          <br></br> <h2>Billing</h2>
+          <input
+            type="checkbox"
+            id="monthlyP"
+            name="monthlyP"
+            value="monthlyP"
+            checked={monthlyCost}
+            data-group="costGroup"
+            onChange={handleCheckboxChange}
+            //   onChange={(e) => setAnnualCost(!annualCost)}
+          />
+          <label htmlFor="monthlyP"> Monthly</label>
+          <br></br>
+          <input
+            type="checkbox"
+            id="annualP"
+            name="annualP"
+            value="annualP"
+            checked={annualCost}
+            data-group="costGroup"
+            onChange={handleCheckboxChange}
+            //   onChange={(e) => setMonthlyCost(!monthlyCost)}
+          />
+          <label htmlFor="annualP"> Annual</label>
+          <br></br>
+          <input
+            type="checkbox"
+            id="autoPay"
+            name="autoPay"
+            value="autoPay"
+            checked={autoPay}
+            onChange={handleCheckboxChange}
+          />
+          <label htmlFor="autoPay"> Autopay</label>
+          <br></br>
+          <input
+            type="checkbox"
+            id="autoRenew"
+            name="autoRenew"
+            value="autoRenew"
+            checked={autoRenew}
+            onChange={handleCheckboxChange}
+          />
+          <label htmlFor="autoRenew"> Autorenew</label>
+          <br></br>
+          <label htmlFor="paymentMethod">Payment Method: </label>
+          <input
+            type="text"
+            id="paymentMethod"
+            name="paymentMethod"
+            onChange={handleInputChange}
+          />
+          <label htmlFor="currency-field">Enter Amount: </label>
+          <input
+            type="number"
+            name="currency-field"
+            id="currency-field"
+            pattern="^\d{1,3}(,\d{3})*(\.\d+)?$"
+            value={cost}
+            data-type="currency"
+            placeholder="$50.00"
+            onChange={handleInputChange}
+          />
+          <br></br>
+          <input
+            type="text"
+            id="subDesc"
+            name="subDesc"
+            placeholder="Optional Description"
+            onChange={handleInputChange}
+            value={description}
+          />
+          <br></br>
+          <br></br>
+          <button id="newSubBtn" type="submit">
+            Save
+          </button>
+          {errorMessage && (
+            <div>
+              <p className="error-text">{errorMessage}</p>
+            </div>
+          )}
+        </div>
+      </form>
+      <Footer />
     </>
   );
 }

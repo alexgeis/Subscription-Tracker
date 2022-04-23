@@ -80,8 +80,8 @@ export const CREATE_SUBSCRIPTION = gql`
   mutation CreateSubscription(
     $userId: ID!
     $subscriptionName: String!
-    $monthlyCost: Int
-    $annualCost: Int
+    $monthlyCost: Float
+    $annualCost: Float
     $paymentType: String
     $startDate: String
     $dueDate: String
@@ -121,8 +121,8 @@ export const UPDATE_SUBSCRIPTION = gql`
   mutation updateSubscription(
     $id: ID!
     $subscriptionName: String
-    $monthlyCost: Int
-    $annualCost: Int
+    $monthlyCost: Float
+    $annualCost: Float
     $paymentType: String
     $autoPay: Boolean
     $autoRenew: Boolean
