@@ -15,8 +15,8 @@ const typeDefs = gql`
   type Subscription {
     _id: ID!
     subscriptionName: String!
-    monthlyCost: Int
-    annualCost: Int
+    monthlyCost: Float
+    annualCost: Float
     paymentType: String
     startDate: String
     dueDate: String
@@ -50,8 +50,8 @@ const typeDefs = gql`
     createSubscription(
       userId: ID!
       subscriptionName: String!
-      monthlyCost: Int
-      annualCost: Int
+      monthlyCost: Float
+      annualCost: Float
       paymentType: String
       startDate: String
       dueDate: String
@@ -62,8 +62,8 @@ const typeDefs = gql`
     updateSubscription(
       _id: ID!
       subscriptionName: String
-      monthlyCost: Int
-      annualCost: Int
+      monthlyCost: Float
+      annualCost: Float
       paymentType: String
       # startDate: String
       # dueDate: String
