@@ -8,7 +8,7 @@ import AuthService from "../../utils/auth";
 import Footer from "../Footer/Footer";
 import { useNavigate } from "react-router-dom";
 
-function NewSub() {
+function NewSub(props) {
   const userId = AuthService.getProfile().data._id;
   //state variables
   const [startDate, setStartDate] = useState(new Date());
@@ -27,7 +27,7 @@ function NewSub() {
   const navigate = useNavigate();
   let today = new Date(startDate);
   const due = today.setMonth(today.getMonth() + 1).toLocaleString();
-
+  const { toggleTheme } = props;
   const [createSubscription, { error }] = useMutation(CREATE_SUBSCRIPTION);
 
   const handleInputChange = (e) => {
@@ -229,7 +229,7 @@ function NewSub() {
           )}
         </div>
       </form>
-      <Footer />
+      <Footer toggleTheme={toggleTheme} />
     </>
   );
 }

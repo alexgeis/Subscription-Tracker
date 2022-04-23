@@ -10,7 +10,7 @@ import { REMOVE_SUBSCRIPTION } from '../../utils/mutations';
 import AuthService from "../../utils/auth"
 import Footer from "../Footer/Footer";
 
-function SingleSub() {
+function SingleSub(props) {
   // set modal display state
 
 
@@ -22,7 +22,7 @@ function SingleSub() {
     const { loading, error, data } = useQuery(QUERY_SINGLE_USER, {
         variables: { userId: userId }
       })
-    
+    const { toggleTheme } = props;
       if (loading){
         return (<div> ...Loading </div>)
       }
@@ -91,7 +91,7 @@ function SingleSub() {
         </div>
       </div>
     </div>
-    <Footer />
+    <Footer toggleTheme={toggleTheme}/>
     </>
   );
 }

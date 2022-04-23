@@ -1,5 +1,6 @@
 import "../MngSub/mngSub.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Footer from "../Footer/Footer"
 // import QUERY_SUBSCRIPTION from "../../utils/queries";
 import SubscriptionList from "../../SubscriptionList";
 import { useQuery } from "@apollo/client";
@@ -48,8 +49,11 @@ import AuthService from "../../utils/auth";
 
 // export default MngSub;
 
-function MngSub() {
+function MngSub(props) {
+  const { toggleTheme } = props;
+
   return (
+    <>
     <div class="container-fluid">
       <h1 id="mngSubPage">Manage My Subscriptions</h1>
       {/* <table class="table table-striped">
@@ -87,12 +91,14 @@ function MngSub() {
       <h5 id="totalCost">Total Monthly Cost = </h5>
       <h5 id="totalCost">Total Annual Cost = </h5>
     </div>
+    <Footer toggleTheme={toggleTheme} />
+    </>
   );
 }
 
 export default MngSub;
 
-{
+// {
   /* <h1 id='mngSubPage'>Manage My Subscriptions</h1>    
 <div class="row justify-content-around" id='mngSubBox'>
     <div className="col-4" id='allSubList' >
@@ -109,4 +115,4 @@ export default MngSub;
     </div>
     <h5 id='totalCost'>Total Annual Cost = </h5>
 </div> */
-}
+// }

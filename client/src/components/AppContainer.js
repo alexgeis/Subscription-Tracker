@@ -21,10 +21,10 @@ export default function AppContainer(props) {
             element={<Welcome toggleTheme={toggleTheme} />}
           />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/sub/:id" element={<SingleSub />} />
-          <Route path="/newsub" element={<NewSub />} />
-          <Route path="/managesub" element={<MngSub />} />
-          <Route path="/settings" element={<Settings />} />
+          <Route path="/sub/:id" element={<SingleSub toggleTheme={toggleTheme} />} />
+          <Route path="/newsub" element={<NewSub toggleTheme={toggleTheme} />} />
+          <Route path="/managesub" element={<MngSub toggleTheme={toggleTheme} />} />
+          <Route path="/settings" element={<Settings toggleTheme={toggleTheme} />} />
         </Routes>
       </div>
     </Router>
