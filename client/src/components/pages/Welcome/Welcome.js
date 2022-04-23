@@ -2,41 +2,41 @@ import "../Welcome/welcome.css";
 import React, { useState } from "react";
 // import { Button, ButtonGroup, ToggleButton, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useQuery } from '@apollo/client'
+import { useQuery } from "@apollo/client";
 import { QUERY_SINGLE_USER } from "../../utils/queries";
 import AuthService from "../../utils/auth";
 import { Link } from "react-router-dom";
 import SubscriptionList from "../../SubscriptionList";
 import Footer from "../Footer/Footer";
 
+function Welcome(props) {
+  const { toggleTheme } = props;
 
-function Welcome() {
   const [checked, setChecked] = useState(false);
   const [radioValue, setRadioValue] = useState("1");
-  let userId = (AuthService.getProfile().data._id)
-  console.log(userId)
-  console.log(typeof userId)
+  let userId = AuthService.getProfile().data._id;
+  console.log(userId);
+  console.log(typeof userId);
   const radios = [
     { name: "Light Mode", value: "1" },
     { name: "Dark Mode", value: "2" },
   ];
 
   const { loading, error, data } = useQuery(QUERY_SINGLE_USER, {
-    variables: { userId: userId }
-  })
+    variables: { userId: userId },
+  });
 
-  if (loading){
-    return (<div> ...Loading </div>)
+  if (loading) {
+    return <div> ...Loading </div>;
   }
 
-  console.log(data)
-  let subArray = data.user.subscriptions
+  console.log(data);
+  let subArray = data.user.subscriptions;
 
   let monthlySum = 0;
   for (let i = 0; i < subArray.length; i++) {
-    monthlySum = monthlySum + subArray[i].monthlyCost
+    monthlySum = monthlySum + subArray[i].monthlyCost;
   }
-
 
   return (
     <>
@@ -54,11 +54,11 @@ function Welcome() {
           </button>
         </Link>
         <div id="thisMonth">
-          <SubscriptionList subscriptions={data.user.subscriptions}/>
+          <SubscriptionList subscriptions={data.user.subscriptions} />
           <p>Monthly Total: ${monthlySum}.00 </p>
         </div>
       </div>
-      <Footer />
+      <Footer toggleTheme={toggleTheme} />
     </>
   );
 }
