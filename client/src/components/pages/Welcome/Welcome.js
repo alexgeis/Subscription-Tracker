@@ -52,12 +52,15 @@ function Welcome(props) {
           <button id="addSubBtn" className="btn btn-primary" type="button">
             Add A Subscription
           </button>
+          <br></br>
         </Link>
         <div id="thisMonth">
           <SubscriptionList subscriptions={data.user.subscriptions} />
+          <br></br>
           <p>Total: ${(Math.round((monthlySum)*100)/100)}</p>
         </div>
       </div>
+      <div id="otherSpace"></div>
       <Footer toggleTheme={toggleTheme} />
     </>
   );

@@ -52,6 +52,7 @@ function SingleSub(props) {
   const s = subscriptions[subIndex];
 
   return (
+    <>
     <div className="container-fluid">
       <h1 id="singleSubHead" >{s.subscriptionName}</h1>
 
@@ -68,15 +69,6 @@ function SingleSub(props) {
           <h4>Payment Type:</h4>
           <p>{s.paymentType}</p>
         </div>
-        {/* <div>
-        <p>Start Date:</p>
-        <p>{s.startDate}</p>
-    </div>
-    <div>
-        <p>Next Due Date:</p>
-        <p>05/{s.dueDate}/22</p>
-
-    </div> */}
         <div>
           <h4>Auto Pay?</h4>
           <p>{s.autoPay ? "Yes" : "No"}</p>
@@ -98,28 +90,10 @@ function SingleSub(props) {
           </div>
         </div>
       </div>
-      <Footer toggleTheme={toggleTheme} />
     </div>
+    <Footer toggleTheme={toggleTheme} />
+    </>
   );
-}
-
-{
-  /* <InputGroup className="mb-3">
-    <InputGroup.Text>$</InputGroup.Text>
-    <FormControl aria-label="Amount (to the nearest dollar)" />
-    <InputGroup.Text>.00</InputGroup.Text>
-</InputGroup>
-    <InputGroup className="mb-3">
-    <InputGroup.Text>$</InputGroup.Text>
-    <FormControl aria-label="Amount (to the nearest dollar)" />
-    <InputGroup.Text>.00</InputGroup.Text>
-</InputGroup>
-
-
-    <InputGroup>
-    <InputGroup.Text>Description</InputGroup.Text>
-    <FormControl as="textarea" aria-label="With textarea" />
-</InputGroup> */
 }
 
 export default SingleSub;

@@ -11,9 +11,6 @@ import Footer from "../Footer/Footer";
 
 
 function Settings(props) {
-
-const [checked, setChecked] = useState(false);
-const [radioValue, setRadioValue] = useState("1");
 const { toggleTheme } = props;
 let userId = (AuthService.getProfile().data)
 console.log(userId)
@@ -25,14 +22,12 @@ console.log(userId)
 
 <h5>Username:</h5>
       <p>{userId.username}</p>
-
       <button id="editBtn">Edit</button>
       <h5>Email:</h5>
       <p>{userId.email}</p>
       <button id="editBtn">Edit</button>
       <h5>Password:</h5>
       <p>Password****{userId.password}</p>
-
       <button id="editBtn">Edit</button>
       <div>
           <button id="buttonInstall" role="button">
