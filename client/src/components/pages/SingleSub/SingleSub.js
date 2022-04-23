@@ -28,8 +28,6 @@ function SingleSub(props) {
       }
 
     const subscriptions = data.user.subscriptions;
-
-     
       
       const handleRemove = async (event) => {
         event.preventDefault()
@@ -91,7 +89,7 @@ function SingleSub(props) {
         </div>
       </div>
     </div>
-    <Footer toggleTheme={toggleTheme} />
+    <Footer toggleTheme={toggleTheme}/>
     </>
   );
 }
