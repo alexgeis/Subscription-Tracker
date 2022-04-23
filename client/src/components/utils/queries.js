@@ -21,27 +21,6 @@ export const QUERY_USER = gql`
     }
   }
 `;
-// export const QUERY_USER = gql`
-//   query users ($userEmail: ID!){
-//     users (userEmail: $userEmail){
-//       _id
-//       username
-//       password
-//       email
-//       subscriptions {
-//         _id
-//         subscriptionName
-//         monthlyCost
-//         annualCost
-//         paymentType
-//         startDate
-//         dueDate
-//         autoPay
-//         autoRenew
-//       }
-//     }
-//   }
-// `;
 
 export const QUERY_SUBSCRIPTION = gql`
   query subscriptions {
