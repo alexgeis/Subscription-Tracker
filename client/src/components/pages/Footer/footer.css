@@ -1,6 +1,8 @@
 .footerButtons {
     padding-top: 80px;
     margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
 }
 
 .footer-items {
@@ -8,7 +10,7 @@
         text-align: center;
         color: white !important;
         cursor: pointer;
-        padding-right: 50px;
+        padding-right: 30px;
 }
 
 a {
