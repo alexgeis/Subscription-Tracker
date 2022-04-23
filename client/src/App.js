@@ -9,6 +9,12 @@ import {
   createHttpLink,
 } from "@apollo/client";
 
+import React, { useState, useEffect } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyles } from './components/utils/Global';
+import { lightTheme, darkTheme } from './components/utils/ThemeContext';
+import { useDarkMode } from './components/utils/DarkMode';
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import { setContext } from "@apollo/client/link/context";
 const httpLink = createHttpLink({
@@ -36,14 +42,27 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+
 function App() {
+
+  const [theme, toggleTheme, componentMounted] = useDarkMode();
+
+  const themeMode = theme === 'light' ? lightTheme : darkTheme;
+
+  if (!componentMounted) {
+    return <div />
+  };
+
   return (
+
     <ApolloProvider client={client}>
-      {/* <UserProvider> */}
+      <ThemeProvider theme={themeMode}>
+      <GlobalStyles />
       <div className="App">
         <AppContainer />
       </div>
-      {/* </UserProvider> */}
+        <button align="center" id="toggleTheme" onClick={toggleTheme}>Toggle theme</button>
+      </ThemeProvider>
     </ApolloProvider>
   );
 }

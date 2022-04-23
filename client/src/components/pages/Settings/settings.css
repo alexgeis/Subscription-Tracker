@@ -11,4 +11,9 @@
     font-size: larger !important;
     border-radius: 5px;
     margin-top: 50px;
+    font-weight: lighter;
+}
+#editBtn {
+    font-weight: lighter;
+    margin-bottom: 30px;
 }

@@ -1,29 +1,17 @@
-import React, { useState, useContext } from 'react';
 
-// Create our theme context using React.CreateContext()
-export const ThemeContext = React.createContext();
-
-// Create a custom hook that allows easy access to our ThemeContext values
-export const useTheme = () => useContext(ThemeContext);
-// Creating our theme provider. Accepts an argument of "props", here we plucking off the "children" object.
-export default function ThemeProvider({ children }) {
-  // Creating our state
-const [darkTheme, setDarkTheme] = useState(true);
-
-  // Method to update our state
-const toggleTheme = () => {
-    return setDarkTheme((prev) => !prev);
-};
-
-
-return (
-    <ThemeContext.Provider value={{ darkTheme, toggleTheme }}>
-    {children}
-    </ThemeContext.Provider>
-);
+export const lightTheme = {
+    body:'linear-gradient(50deg, #D7B377A6 12%, #59C9A5B8 33%, #427AA1A6 55%, #885A5AB0 78%, #2C2C3496 100%)',
+    text: '#363537',
+    toggleBorder: '#FFF',
+    gradient: 'linear-gradient(#39598A, #79D7ED)',
 }
 
-
+export const darkTheme = {
+    body: 'linear-gradient(328deg, #000000 6%, #67696B 25%, #ADB3B4 47%, #636467 72%, #000000 92%)',
+    text: '#FFFFFF',
+    toggleBorder: '#6B8096',
+    gradient: 'linear-gradient(#091236, #1E215D)',
+}
 
 //LIGHT MODE
 
