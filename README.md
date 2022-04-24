@@ -21,53 +21,53 @@ Cache Bandit is an easy to use application where you can input all the details t
 
  <br>
 
-* When you go to Cache bandit,
-Then you are presented with a login page with the option to login or sign up. 
+* WHEN you go to Cache bandit,
+THEN you are presented with a login page with the option to login or sign up. 
 
-* When you click the signup button, then you are redirected to a signup page with fields for username, email, and password. 
+* WHEN you click the signup button, then you are redirected to a signup page with fields for username, email, and password. 
 
-* When you click the submit button on the signup page, you are redirected to the login page. 
+* WHEN you click the submit button on the signup page, you are redirected to the login page. 
 
-* When you enter your username and password and login, then you are redirected to the welcome page. 
+* WHEN you enter your username and password and login, then you are redirected to the welcome page. 
 
-* When you are on the welcome page,
-then you are presented with a list of your subscriptions that are buttons that will allow you to see the individual subscription details, your displayed username, setting button, toggle theme button, add a subscription button, home button, and logout button. 
+* WHEN you are on the welcome page,
+THEN you are presented with a list of your subscriptions that are buttons that will allow you to see the individual subscription details, your displayed username, setting button, toggle theme button, add a subscription button, home button, and logout button. 
 
-* When you click the settings button,
-then you are presented with options to edit your username, email, password, and a button to install the webapp. 
+* WHEN you click the settings button,
+THEN you are presented with options to edit your username, email, password, and a button to install the webapp. 
 
-* When you click the add a subsciption button, 
-then you are redirected to the new subscription page.
+* WHEN you click the add a subscription button, 
+THEN you are redirected to the new subscription page.
 
-* When you view the new subscription page, 
-then you have the ability to enter a new subscription's name, start date, due date, billing cycle, auto-pay, auto-renew, payment method, cost, and description. 
+* WHEN you view the new subscription page, 
+THEN you have the ability to enter a new subscription's name, start date, due date, billing cycle, auto-pay, auto-renew, payment method, cost, and description. 
 
-* When you click save in new subscription,
-then your new subscription is added to the database. 
+* WHEN you click save in new subscription,
+THEN your new subscription is added to the database. 
 
-* When you click an indiviual subscription button, 
-then you are preseted with that subscription's name, monthly cost, annual cost, payment type, auto-pay and auto-renew information, and the option to edit or delete the subscription. 
+* WHEN you click an individual subscription button, 
+THEN you are presented with that subscription's name, monthly cost, annual cost, payment type, auto-pay and auto-renew information, and the option to edit or delete the subscription. 
 
-* When you click the edit button in new subscription, 
-then a modal pops up, that allows you to edit the name, monthly cost, payment type, auto-pay and auto-renew options. 
+* WHEN you click the edit button in new subscription, 
+THEN a modal pops up, that allows you to edit the name, monthly cost, payment type, auto-pay and auto-renew options. 
 
-* When you click the delete button in edit subscription, 
-then it removes your subscription from the datebase. 
+* WHEN you click the delete button in edit subscription, 
+THEN it removes your subscription from the database. 
 
-* When you look at the footer,
-then you are presented with a toggle button, home button, and logout button. 
+* WHEN you look at the footer,
+THEN you are presented with a toggle button, home button, and logout button. 
 
-* When you click the toggle button,
-then the background shifts from light to dark. 
+* WHEN you click the toggle button,
+THEN the background shifts from light to dark. 
 
-* When the background is toggled,
-then that choice is saved in local storage, and it will stay the same upon page refresh.
+* WHEN the background is toggled,
+THEN that choice is saved in local storage, and it will stay the same upon page refresh.
 
-* When the user clicks the logout button,
-then they are signed out. 
+* WHEN the user clicks the logout button,
+THEN they are signed out. 
 
-* When the user clicks the home button, 
-then they are redirected to the welcome page. 
+* WHEN the user clicks the home button, 
+THEN they are redirected to the welcome page. 
 
 
 
