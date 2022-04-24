@@ -1,12 +1,12 @@
-import Welcome from "../Welcome/Welcome";
-import { Container, ButtonGroup, ToggleButton, Button } from "react-bootstrap";
+// import Welcome from "../Welcome/Welcome";
+import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Settings/settings.css";
 import React, { useState } from "react";
-import { useQuery } from '@apollo/client'
+// import { useQuery } from '@apollo/client'
 import AuthService from "../../utils/auth";
-import { QUERY_USER } from "../../utils/queries";
-import { useTheme } from '../../utils/ThemeContext';
+// import { QUERY_USER } from "../../utils/queries";
+// import { useTheme } from '../../utils/ThemeContext';
 import Footer from "../Footer/Footer";
 
 
