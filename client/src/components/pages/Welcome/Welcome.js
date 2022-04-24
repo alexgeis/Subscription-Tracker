@@ -15,8 +15,6 @@ function Welcome(props) {
   const [checked, setChecked] = useState(false);
   const [radioValue, setRadioValue] = useState("1");
   let userId = AuthService.getProfile().data._id;
-  console.log(userId);
-  console.log(typeof userId);
   const radios = [
     { name: "Light Mode", value: "1" },
     { name: "Dark Mode", value: "2" },
@@ -30,7 +28,6 @@ function Welcome(props) {
     return <div> ...Loading </div>;
   }
 
-  console.log(data);
   let subArray = data.user.subscriptions;
 
   let monthlySum = 0;

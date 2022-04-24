@@ -26,7 +26,6 @@ export const UserProvider = ({ children }) => {
 
   // Method to update our state
   const toggleTheme = () => {
-    console.log("inside toggle theme");
     return setDarkTheme((prev) => !prev);
   };
 
