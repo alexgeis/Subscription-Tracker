@@ -1,12 +1,12 @@
-import Welcome from "../Welcome/Welcome";
-import { Container, ButtonGroup, ToggleButton, Button } from "react-bootstrap";
+// import Welcome from "../Welcome/Welcome";
+import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Settings/settings.css";
-import React, { useState } from "react";
-import { useQuery } from '@apollo/client'
+import React from "react";
+// import { useQuery } from '@apollo/client'
 import AuthService from "../../utils/auth";
-import { QUERY_USER } from "../../utils/queries";
-import { useTheme } from '../../utils/ThemeContext';
+// import { QUERY_USER } from "../../utils/queries";
+// import { useTheme } from '../../utils/ThemeContext';
 import Footer from "../Footer/Footer";
 
 
@@ -29,7 +29,7 @@ let userId = (AuthService.getProfile().data)
       <p>Password****{userId.password}</p>
       <button id="editBtn">Edit</button>
       <div>
-          <button id="buttonInstall" role="button">
+          <button id="buttonInstall">
             Click To Install!
           </button>
         </div>
