@@ -2,7 +2,7 @@
 import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Settings/settings.css";
-import React, { useState } from "react";
+import React from "react";
 // import { useQuery } from '@apollo/client'
 import AuthService from "../../utils/auth";
 // import { QUERY_USER } from "../../utils/queries";
@@ -29,7 +29,7 @@ let userId = (AuthService.getProfile().data)
       <p>Password****{userId.password}</p>
       <button id="editBtn">Edit</button>
       <div>
-          <button id="buttonInstall" role="button">
+          <button id="buttonInstall">
             Click To Install!
           </button>
         </div>
