@@ -28,14 +28,11 @@ function Home() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
     try {
-      console.log({ ...formState });
-      console.log(login);
+
       const { data } = await login({
         variables: { ...formState },
       });
-      console.log(`I'm on line 33 here's some ${data}`);
       AuthService.login(data.login.token); //json web token
     } catch (error) {
       console.error(JSON.stringify(error));

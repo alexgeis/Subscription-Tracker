@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function SubscriptionList({ subscriptions }) {
-  console.log(subscriptions);
   return (
     <table className="table table-striped">
       <thead>
