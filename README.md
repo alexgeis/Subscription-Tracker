@@ -80,13 +80,13 @@ THEN they are redirected to the welcome page.
 <br>
 
 
-![Login Page](./client/src/components/images/LoginPage.png)
+![Login Page](./client/src/components/Images/LoginPage.png)
 
-![Home Page](./client/src/components/images/HomePage.png)
+![Home Page](./client/src/components/Images/HomePage.png)
 
-![Single Sub Page](./client/src/components/images/SingleSubPage.png)
+![Single Sub Page](./client/src/components/Images/SingleSubPage.png)
 
-![Add Sub Page](./client/src/components/images/AddNewSub.png)
+![Add Sub Page](./client/src/components/Images/AddNewSub.png)
 
 
 
