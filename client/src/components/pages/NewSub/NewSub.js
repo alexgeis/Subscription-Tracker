@@ -66,9 +66,6 @@ function NewSub(props) {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log("cost", cost);
-    console.log("cost12", cost12);
-    console.log("costMonth", costMonth);
     if (!subName || !cost) {
       setErrorMessage("New subscription requires name and cost.");
       return;
@@ -104,7 +101,6 @@ function NewSub(props) {
         });
       }
       // clear out the input after submit
-      console.log("createSubscription method invoked");
       setStartDate(new Date());
       setDueDate(new Date());
       setSubName("");
