@@ -75,7 +75,7 @@ function EditUser({user}){
             } catch {
                 console.log(JSON.stringify(error))
             } finally {
-                alert("Update succesful, please log in again with new account settings")
+                alert("Update successful, please log in again with new account settings")
                 AuthService.logout();
             }
         }  else {
@@ -91,7 +91,7 @@ function EditUser({user}){
             } catch {
                 console.log(JSON.stringify(error))
             } finally {
-                alert("Update succesful, please log in again with new account settings")
+                alert("Update successful, please log in again with new account settings")
                 AuthService.logout();
             }
         }
