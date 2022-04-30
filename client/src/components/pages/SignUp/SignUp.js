@@ -31,14 +31,10 @@ const SignUp = () => {
       event.preventDefault();
       event.stopPropagation();
     }
-    console.log(userFormData);
     try {
-      console.log("Working?");
       const { data } = await createUser({
         variables: { ...userFormData },
       });
-
-      console.log(data);
       AuthService.newUser(data.createUser.token);
     } catch (error) {
       console.error(error);
