@@ -2,6 +2,7 @@ import { Modal, Form, Button } from 'react-bootstrap';
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { UPDATE_USER } from './utils/mutations'
+import AuthService from './utils/auth'
 
 
 function EditUser({user}){
@@ -42,6 +43,9 @@ function EditUser({user}){
                 setUserPasswordConfirm(inputValue)
                 break
             }
+            default: {
+                console.log("This message should never appear")
+            }
         }
     };
 
@@ -72,34 +76,27 @@ function EditUser({user}){
                 console.log(JSON.stringify(error))
             } finally {
                 alert("Update succesful, please log in again with new account settings")
-                handleHide()
+                AuthService.logout();
             }
         }  else {
-            return alert ("Updated Password currently broken: Passwords will not hash")
-            // try {
-            //     const { data } = await updateUser({
-            //         variables: {
-            //             id: user._id,
-            //             username: userName,
-            //             email: userEmail,
-            //             password: userPassword
-            //         }
-            //     })
-            // } catch {
-            //     console.log(JSON.stringify(error))
-            // } finally {
-            //     alert("Update succesful, please log in again with new account settings")
-            //     handleHide()
-            // }
+            try {
+                const { data } = await updateUser({
+                    variables: {
+                        id: user._id,
+                        username: userName,
+                        email: userEmail,
+                        password: userPassword
+                    }
+                })
+            } catch {
+                console.log(JSON.stringify(error))
+            } finally {
+                alert("Update succesful, please log in again with new account settings")
+                AuthService.logout();
+            }
         }
     }
 
-    const consoleLogger = (e) => {
-        e.preventDefault()
-        console.log(userName)
-        console.log(userEmail)
-        console.log(userPassword)
-    }
 
     return (
         <>
@@ -109,7 +106,6 @@ function EditUser({user}){
                     <Modal.Title>Update Account Details</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Button onClick={consoleLogger}>Console Logger</Button>
                     <Form>
                         <Form.Group className="mb-3">
                             <Form.Label>Username: </Form.Label>
