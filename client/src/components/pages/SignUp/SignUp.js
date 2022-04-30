@@ -11,6 +11,7 @@ const SignUp = () => {
     username: "",
     email: "",
     password: "",
+    confirmPass: "",
   });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
@@ -31,6 +32,10 @@ const SignUp = () => {
     if (userFormData.password.length < 6){
       return alert("Password must be at least 6 characters")
     }
+
+    if (userFormData.password !== userFormData.confirmPass){
+      return alert("Passwords do not match")
+    }
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
@@ -50,6 +55,7 @@ const SignUp = () => {
       username: "",
       email: "",
       password: "",
+      confirmPass: "",
     });
   };
 
@@ -108,7 +114,21 @@ const SignUp = () => {
               required
             />
             <Form.Control.Feedback type="invalid">
-              Password is required
+              Password is required in both fields
+            </Form.Control.Feedback>
+          </Form.Group>
+          <Form.Group>
+            <Form.Label htmlFor="password">Confirm Password</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Your password (must be at least 6 characters)"
+              name="confirmPass"
+              onChange={handleInputChange}
+              value={userFormData.confirmPass}
+              required
+            />
+            <Form.Control.Feedback type="invalid">
+              Password is required in both fields
             </Form.Control.Feedback>
           </Form.Group>
           <Button
