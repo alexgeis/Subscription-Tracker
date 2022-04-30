@@ -1,17 +1,17 @@
 import { Modal, Form, Button } from 'react-bootstrap';
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import UPDATE_USER from './utils/mutations'
+import { UPDATE_USER } from './utils/mutations'
 
 
 function EditUser({user}){
 
-    // TODO: Destructure User
     const [showModal, setShowModal] = useState(false);
     const [userName, setUserName] = useState(user.username);
     const [userEmail, setUserEmail] = useState(user.email);
     const [userPassword, setUserPassword] = useState(false);
     const [userPasswordConfirm, setUserPasswordConfirm] = useState(false);
+    const [updateUser, { error }] = useMutation(UPDATE_USER);
 
     const handleHide = () => {
         setUserName(user.username);
@@ -45,7 +45,7 @@ function EditUser({user}){
         }
     };
 
-    const handleFormSubmit = (e) => {
+    const handleFormSubmit = async (e) => {
         e.preventDefault();
         if (userName.length < 6){
             return alert("Username must be at least 6 characters")
@@ -59,7 +59,39 @@ function EditUser({user}){
             }
         }
 
-        
+        if (!userPassword){
+            try {
+                const { data } = await updateUser({
+                    variables: {
+                        id: user._id,
+                        username: userName,
+                        email: userEmail
+                    }
+                })
+            } catch {
+                console.log(JSON.stringify(error))
+            } finally {
+                alert("Update succesful, please log in again with new account settings")
+                handleHide()
+            }
+        }  else {
+            return alert ("Updated Password currently broken: Passwords will not hash")
+            // try {
+            //     const { data } = await updateUser({
+            //         variables: {
+            //             id: user._id,
+            //             username: userName,
+            //             email: userEmail,
+            //             password: userPassword
+            //         }
+            //     })
+            // } catch {
+            //     console.log(JSON.stringify(error))
+            // } finally {
+            //     alert("Update succesful, please log in again with new account settings")
+            //     handleHide()
+            // }
+        }
     }
 
     const consoleLogger = (e) => {
