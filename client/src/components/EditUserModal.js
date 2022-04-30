@@ -103,7 +103,7 @@ function EditUser({user}){
 
     return (
         <>
-            <Button onClick={() => setShowModal(true)}>Modal Button</Button>
+            <Button onClick={() => setShowModal(true)}>Edit Account Details</Button>
             <Modal show={showModal} onHide={handleHide}>
                 <Modal.Header closeButton>
                     <Modal.Title>Update Account Details</Modal.Title>

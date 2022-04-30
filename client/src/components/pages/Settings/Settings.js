@@ -17,15 +17,12 @@ let userId = (AuthService.getProfile().data)
       <h1 id="settingsHead">Settings</h1>
 
 <h5>Username:</h5>
-      <EditUser user={userId} />
       <p>{userId.username}</p>
-      <button id="editBtn">Edit</button>
       <h5>Email:</h5>
       <p>{userId.email}</p>
-      <button id="editBtn">Edit</button>
       <h5>Password:</h5>
       <p>Password****{userId.password}</p>
-      <button id="editBtn">Edit</button>
+      <EditUser user={userId} />    
       <div>
           <button id="buttonInstall">
             Click To Install!
