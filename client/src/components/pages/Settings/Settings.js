@@ -1,13 +1,10 @@
-// import Welcome from "../Welcome/Welcome";
 import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Settings/settings.css";
 import React from "react";
-// import { useQuery } from '@apollo/client'
 import AuthService from "../../utils/auth";
-// import { QUERY_USER } from "../../utils/queries";
-// import { useTheme } from '../../utils/ThemeContext';
 import Footer from "../Footer/Footer";
+import EditUser from "../../EditUserModal";
 
 
 function Settings(props) {
@@ -21,13 +18,11 @@ let userId = (AuthService.getProfile().data)
 
 <h5>Username:</h5>
       <p>{userId.username}</p>
-      <button id="editBtn">Edit</button>
       <h5>Email:</h5>
       <p>{userId.email}</p>
-      <button id="editBtn">Edit</button>
       <h5>Password:</h5>
       <p>Password****{userId.password}</p>
-      <button id="editBtn">Edit</button>
+      <EditUser user={userId} />    
       <div>
           <button id="buttonInstall">
             Click To Install!
