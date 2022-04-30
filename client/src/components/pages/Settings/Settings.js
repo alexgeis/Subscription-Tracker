@@ -4,6 +4,7 @@ import "../Settings/settings.css";
 import React from "react";
 import AuthService from "../../utils/auth";
 import Footer from "../Footer/Footer";
+import EditUser from "../../EditUserModal";
 
 
 function Settings(props) {
@@ -16,6 +17,7 @@ let userId = (AuthService.getProfile().data)
       <h1 id="settingsHead">Settings</h1>
 
 <h5>Username:</h5>
+      <EditUser user={userId} />
       <p>{userId.username}</p>
       <button id="editBtn">Edit</button>
       <h5>Email:</h5>
