@@ -25,7 +25,12 @@ const SignUp = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
+    if (userFormData.username.length < 6){
+      return alert("Username must be at least 6 characters")
+    }
+    if (userFormData.password.length < 6){
+      return alert("Password must be at least 6 characters")
+    }
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
