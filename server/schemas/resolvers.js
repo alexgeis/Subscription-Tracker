@@ -1,6 +1,7 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Subscription } = require("../models");
 const { signToken } = require("../utils/auth");
+const bcrypt = require('bcrypt');
 // import { resolvers as scalarResolvers } from "graphql-scalars";
 // ScalarName: ScalarNameResolver,
 
@@ -90,7 +91,8 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     //UPDATE MUTATIONS - NEED TO ADD TOKENS
-    updateUser: async (parent, { _id, username, password, email }) => {
+    updateUser: async (parent, { _id, username, password, email }) => {s
+      password = await bcrypt.hash(password, 10)
       return await User.findOneAndUpdate(
         { _id },
         { username, password, email },
