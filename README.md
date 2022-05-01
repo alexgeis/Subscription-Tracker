@@ -69,7 +69,32 @@ THEN they are signed out.
 * WHEN the user clicks the home button, 
 THEN they are redirected to the welcome page. 
 
+<br>
 
+## Future Development
+
+The following features are slated for upcoming development - the actual order of implementation may vary from this list's order.
+If you would like to contribute or have an idea/modification, please contact the contributors of this application.
+
+### Better State Management -- 
+Currently page reloads are used to force new database queries. Updating state management to reduce the need for page reloads
+
+### Better error messaging -- 
+Currently there are no alerts for failed user validation either on creation or sign-in
+
+### Validate against duplicate usernames
+
+### Add logic to update due-dates -- 
+Right now, "Due Date" is  a static field, and we'd like for it to update dynamically monthly or annual depending on the style of subscription
+
+### Improved Dark Mode --  
+Dark mode currently effects some but not all elements
+
+### Sort By due Date on Welcome page and Only Show Upcoming Expenses -- 
+Hide due dates that are >31 days in future
+
+### Budget Tips -- 
+Utilize free API service to populate the user dashboard with randomized budgeting/financial advice
 
 <br>
 
