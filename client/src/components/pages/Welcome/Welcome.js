@@ -8,6 +8,7 @@ import AuthService from "../../utils/auth";
 import { Link } from "react-router-dom";
 import SubscriptionList from "../../SubscriptionList";
 import Footer from "../Footer/Footer";
+import BudgetTips from "../../utils/BudgetTips"; // add Budget Tips util
 
 function Welcome(props) {
   const { toggleTheme } = props;
@@ -39,6 +40,7 @@ function Welcome(props) {
     <>
       <div className="container-fluid">
         <h1 id="welcomeScreen">Welcome, {data.user.username}!</h1>
+        <BudgetTips />
         <Link to="/settings">
           <button id="settingsButton" className="btn btn-primary" type="button">
             Settings

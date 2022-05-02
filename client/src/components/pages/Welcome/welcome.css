@@ -107,3 +107,20 @@
         content: "Amount";
       } */
     }
+
+    /* Added for styling the budget tips */
+    .budgetTips{
+      color: rgba(7, 7, 7, 0.541);
+      padding-inline: 1rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      border-radius: 1rem;
+      font-size: 0.8rem;
+      background-color: rgba(127, 191, 221, 0.486);
+    }
+
+    .budgetTips > .bold{
+      color: rgba(7, 7, 7, 0.863);
+      text-decoration: underline;
+      text-decoration-color: rgba(27, 120, 163, 0.822);
+    }
