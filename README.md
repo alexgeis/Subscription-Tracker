@@ -79,9 +79,6 @@ If you would like to contribute or have an idea/modification, please contact the
 ### Better State Management -- 
 Currently page reloads are used to force new database queries. Updating state management to reduce the need for page reloads
 
-### Better error messaging -- 
-Currently there are no alerts for failed user validation either on creation or sign-in
-
 ### Validate against duplicate usernames
 
 ### Add logic to update due-dates -- 
